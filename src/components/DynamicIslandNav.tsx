@@ -24,13 +24,13 @@ export const DynamicIslandNav = () => {
   return (
     <div
       className="fixed top-6 left-0 right-0 z-50 flex justify-center"
-      onMouseEnter={() => setIsExpanded(true)}
-      onMouseLeave={() => setIsExpanded(false)}
     >
       <motion.div
         layout
         transition={spring}
         className="flex items-center gap-4 p-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md"
+        onMouseEnter={() => setIsExpanded(true)}
+        onMouseLeave={() => setIsExpanded(false)}
       >
         <Link href="/">
           <motion.div layout="position" className="w-8 h-8 bg-soft-purple-start rounded-full flex items-center justify-center">

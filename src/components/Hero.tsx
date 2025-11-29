@@ -14,7 +14,7 @@ export const Hero = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <SectionWrapper id="hero" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[90vh]">
+    <SectionWrapper id="hero" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
       <div ref={targetRef}>
         {/* Left Column */}
         <motion.div
