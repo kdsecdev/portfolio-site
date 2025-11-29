@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { Code, Contact, Home, Briefcase } from "lucide-react";
+import { motion } from "framer-motion";
+import { Code, Contact, User, Briefcase } from "lucide-react";
 import Link from "next/link";
 
 const spring = {
@@ -14,33 +14,15 @@ const spring = {
 
 export const DynamicIslandNav = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const { scrollY } = useScroll();
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
-    if (latest > previous && latest > 100) {
-      setIsHidden(true);
-      setIsExpanded(false); // Collapse when hiding
-    } else {
-      setIsHidden(false);
-    }
-  });
 
   const navItems = [
+    { name: "About", href: "#about", icon: <User size={20} /> },
     { name: "Work", href: "#work", icon: <Briefcase size={20} /> },
-    { name: "Services", href: "#services", icon: <Code size={20} /> },
     { name: "Contact", href: "#contact", icon: <Contact size={20} /> },
   ];
 
   return (
-    <motion.div
-      variants={{
-        hidden: { y: "-100%", opacity: 0 },
-        visible: { y: "0%", opacity: 1 },
-      }}
-      animate={isHidden ? "hidden" : "visible"}
-      transition={{ duration: 0.35, ease: "easeInOut" }}
+    <div
       className="fixed top-6 left-0 right-0 z-50 flex justify-center"
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
@@ -52,7 +34,7 @@ export const DynamicIslandNav = () => {
       >
         <Link href="/">
           <motion.div layout="position" className="w-8 h-8 bg-accent-primary rounded-full flex items-center justify-center">
-            <Home size={16} className="text-background" />
+            <span className="font-display font-bold text-lg text-background">KD</span>
           </motion.div>
         </Link>
         {isExpanded && (
@@ -88,6 +70,6 @@ export const DynamicIslandNav = () => {
           </span>
         </motion.div>
       </motion.div>
-    </motion.div>
+    </div>
   );
 };

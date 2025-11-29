@@ -1,67 +1,92 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { CodeBlock } from "./CodeBlock";
+import { GlitchyTitle } from "./GlitchyTitle";
+import { TypewriterEffect } from "./TypewriterEffect";
+import { useRef } from "react";
+import { SectionWrapper } from "./SectionWrapper";
 
 export const Hero = () => {
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[80vh] px-4 md:px-12">
-      {/* Left Column */}
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: {
-              staggerChildren: 0.1,
-            },
-          },
-        }}
-      >
-        <motion.h1
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3 } },
-          }}
-          className="text-5xl md:text-7xl font-bold font-display"
-        >
-          I build{" "}
-          <span className="gradient-text">
-            seamless
-          </span>{" "}
-          web experiences.
-        </motion.h1>
-        <motion.p
-          variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.4 } },
-          }}
-          className="mt-4 text-lg text-text-primary"
-        >
-          Senior Frontend Engineer specializing in React, Next.js, and modern
-          web animations.
-        </motion.p>
+    <SectionWrapper id="hero" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[90vh]">
+      <div ref={targetRef}>
+        {/* Left Column */}
         <motion.div
+          initial="hidden"
+          animate="visible"
           variants={{
-            hidden: { opacity: 0, y: 20 },
-            visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5 } },
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
           }}
-          className="mt-8 flex gap-4"
         >
-          <button className="px-6 py-3 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-semibold hover:scale-105 transition-transform">
-            Get in Touch
-          </button>
-          <button className="px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white font-semibold backdrop-blur-md hover:bg-white/20 transition-colors">
-            See My Work
-          </button>
+          <GlitchyTitle />
+          <TypewriterEffect
+            text="Welcome to my portfolio! I'm Caleb."
+            delay={0.5}
+            speed={70}
+            className="mt-4 text-2xl font-bold font-display text-text-primary"
+          />
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5, delay: 0.7 + ("Welcome to my portfolio! I'm Caleb.".length * 70) / 1000 },
+              },
+            }}
+            className="mt-4 text-lg text-text-primary max-w-lg"
+          >
+            Transforming innovative concepts into high-performance, pixel-perfect web experiences.
+          </motion.p>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5, delay: 0.9 + ("Welcome to my portfolio! I'm Caleb.".length * 70) / 1000 },
+              },
+            }}
+            className="mt-8 flex gap-4"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-semibold"
+            >
+              Get in Touch
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white font-semibold backdrop-blur-md"
+            >
+              See My Work
+            </motion.button>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Right Column */}
-      <div className="hidden md:block">
+      <motion.div style={{ y }} className="hidden md:block">
         <CodeBlock />
-      </div>
-    </section>
+      </motion.div>
+    </SectionWrapper>
   );
 };
+
+
