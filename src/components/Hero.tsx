@@ -47,7 +47,7 @@ export const Hero = () => {
             }}
             className="mt-4 text-lg text-text-primary max-w-lg"
           >
-            A Software Developer fusing security-focused engineering with interactive design.
+            Crafting secure, scalable, and engaging digital experiences.
           </motion.p>
           <motion.div
             variants={{

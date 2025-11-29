@@ -3,7 +3,6 @@ import { Work } from "@/components/Work";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { AboutMe } from "@/components/AboutMe";
-import { Skills } from "@/components/Skills"; // Import Skills component
 
 const getGithubReadme = async (username: string): Promise<string> => {
   try {
@@ -31,7 +30,6 @@ export default async function Home() {
     <main>
       <Hero />
       <AboutMe content={content} />
-      <Skills /> {/* New Skills component */}
       <Work />
       <Contact />
       <Footer />

@@ -33,7 +33,7 @@ export const DynamicIslandNav = () => {
         className="flex items-center gap-4 p-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md"
       >
         <Link href="/">
-          <motion.div layout="position" className="w-8 h-8 bg-accent-primary rounded-full flex items-center justify-center">
+          <motion.div layout="position" className="w-8 h-8 bg-soft-purple-start rounded-full flex items-center justify-center">
             <span className="font-display font-bold text-lg text-background">KD</span>
           </motion.div>
         </Link>
