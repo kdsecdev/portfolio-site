@@ -33,8 +33,8 @@ export const DynamicIslandNav = () => {
         onMouseLeave={() => setIsExpanded(false)}
       >
         <Link href="/">
-          <motion.div layout="position" className="w-8 h-8 bg-soft-purple-start rounded-full flex items-center justify-center">
-            <span className="font-display font-bold text-lg text-background">KD</span>
+          <motion.div layout="position" className="w-8 h-8 bg-surface/10 rounded-full flex items-center justify-center">
+            <span className="font-display font-bold text-lg text-neon-blue">KD</span>
           </motion.div>
         </Link>
         {isExpanded && (

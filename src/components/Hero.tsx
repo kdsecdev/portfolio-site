@@ -45,7 +45,7 @@ export const Hero = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.4 } },
             }}
-            className="mt-4 text-lg text-text-primary max-w-lg"
+            className="mt-4 text-base text-text-primary max-w-lg"
           >
             Crafting secure, scalable, and engaging digital experiences.
           </motion.p>

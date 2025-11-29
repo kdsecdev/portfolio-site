@@ -20,7 +20,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
         The Code / The Vibe
       </motion.h2>
 
-      <Card className="max-w-4xl mx-auto p-8 md:p-12">
+      <Card className="max-w-4xl mx-auto p-8 md:p-12 bg-red-500">
         <div className="prose prose-invert prose-lg max-w-none text-text-primary">
           <ReactMarkdown
             components={{
