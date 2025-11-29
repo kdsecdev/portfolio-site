@@ -17,7 +17,7 @@ const socialLinks = [
     icon: <Instagram className="w-6 h-6" />,
   },
   {
-    href: "https://x.com/x9z_dev",
+    href: "https://x.com/devkd999",
     icon: <X className="w-6 h-6" />,
   },
 ];
