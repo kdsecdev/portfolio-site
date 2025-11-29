@@ -14,7 +14,10 @@ export const Hero = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <SectionWrapper id="hero" className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <SectionWrapper
+      id="hero"
+      className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+    >
       <div ref={targetRef}>
         {/* Left Column */}
         <motion.div
@@ -33,26 +36,38 @@ export const Hero = () => {
           <motion.h1
             variants={{
               hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.3 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5, delay: 0.3 },
+              },
             }}
             className="text-5xl md:text-7xl font-bold font-display text-white"
           >
             DEV:KD{" "}
-            <span className="gradient-text">Fusing Security with Design.</span>
+            <span className="gradient-text">
+              Crafting secure, scalable, and engaging digital experiences.
+            </span>
           </motion.h1>
           <motion.p
             variants={{
               hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.4 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5, delay: 0.4 },
+              },
             }}
             className="mt-4 text-base text-text-primary max-w-lg"
-          >
-            Crafting secure, scalable, and engaging digital experiences.
-          </motion.p>
+          ></motion.p>
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.5 } },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.5, delay: 0.5 },
+              },
             }}
             className="mt-8 flex gap-4"
           >
@@ -81,5 +96,3 @@ export const Hero = () => {
     </SectionWrapper>
   );
 };
-
-
