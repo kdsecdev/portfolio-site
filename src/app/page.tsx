@@ -30,7 +30,7 @@ export default async function Home() {
   return (
     <main>
       <Hero />
-      <AboutMe />
+      <AboutMe content={content} />
       <Skills /> {/* New Skills component */}
       <Work />
       <Contact />

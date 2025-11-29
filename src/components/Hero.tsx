@@ -37,18 +37,17 @@ export const Hero = () => {
             }}
             className="text-5xl md:text-7xl font-bold font-display text-white"
           >
-            Logic Secured.{" "}
-            <span className="gradient-text">Imagination Unleashed.</span>
+            DEV:KD{" "}
+            <span className="gradient-text">Fusing Security with Design.</span>
           </motion.h1>
           <motion.p
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.5, delay: 0.4 } },
             }}
-            className="mt-4 text-lg text-text-primary"
+            className="mt-4 text-lg text-text-primary max-w-lg"
           >
-            I’m <span className="text-white font-bold">DevKD</span>. A Software
-            Developer fusing security-focused engineering with interactive design.
+            A Software Developer fusing security-focused engineering with interactive design.
           </motion.p>
           <motion.div
             variants={{
