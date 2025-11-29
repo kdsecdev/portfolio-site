@@ -15,6 +15,7 @@ export const Footer = () => {
         >
           I am open to collaborations on{" "}
           <span className="text-neon-blue font-bold">C++ Systems</span>,{" "}
+          <span className="text-neon-blue font-bold">Web Systems</span>,{" "}
           <span className="text-neon-blue font-bold">Flutter Apps</span>, and{" "}
           <span className="text-neon-blue font-bold">Python Automation</span>.
         </p>

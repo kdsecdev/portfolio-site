@@ -66,7 +66,7 @@ export const DynamicIslandNav = () => {
         <motion.div layout="position" className="flex items-center gap-2 cursor-pointer">
           <div className="w-2 h-2 rounded-full bg-green-400" />
           <span className="text-xs text-text-primary font-medium">
-            Available for Work
+            Available for Projects
           </span>
         </motion.div>
       </motion.div>
