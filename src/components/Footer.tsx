@@ -26,11 +26,6 @@ export const Footer = () => {
             cbotch5000@gmail.com
           </a>
         </p>
-        <p
-          className="text-sm italic text-text-primary mt-8"
-        >
-          "Always looking for new challenges and opportunities to grow."
-        </p>
         <p className="text-text-primary text-center text-xs mt-12">
           &copy; {new Date().getFullYear()} Caleb (DEV:KD). All rights reserved.
         </p>
