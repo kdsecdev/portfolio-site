@@ -13,8 +13,9 @@ const config: Config = {
         background: "#08080D",
         surface: "#141419",
         "text-primary": "#BCBABC",
-        "accent-primary": "#F86D09",
-        "accent-secondary": "#EFA649",
+        "neon-blue": "#00F0FF",
+        "soft-purple-start": "#8A2BE2",
+        "soft-purple-end": "#DA70D6",
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],

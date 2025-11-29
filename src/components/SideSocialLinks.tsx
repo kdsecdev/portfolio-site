@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Instagram, X } from "lucide-react";
 import Link from "next/link";
 
 const socialLinks = [
@@ -11,6 +11,14 @@ const socialLinks = [
   {
     href: "https://www.linkedin.com/in/caleb-botchway-3b5aa7265",
     icon: <Linkedin className="w-6 h-6" />,
+  },
+  {
+    href: "https://instagram.com/x9z_dev",
+    icon: <Instagram className="w-6 h-6" />,
+  },
+  {
+    href: "https://x.com/x9z_dev",
+    icon: <X className="w-6 h-6" />,
   },
 ];
 

@@ -14,7 +14,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(to right, #F86D09, #EFA649);
+  background: linear-gradient(to right, theme('colors.soft-purple-start'), theme('colors.soft-purple-end'));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -23,7 +23,7 @@ body {
   font-family: var(--font-display);
   font-size: 5rem;
   font-weight: 700;
-  color: #fff;
+  color: theme('colors.text-primary'); /* Use text-primary for base color */
   position: relative;
   animation: glitch-anim 2.5s infinite;
 }
@@ -36,19 +36,19 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #08080D;
+  background: theme('colors.background'); /* Use background color */
   overflow: hidden;
 }
 
 .glitchy-title::before {
   left: 2px;
-  text-shadow: -2px 0 #F86D09;
+  text-shadow: -2px 0 theme('colors.neon-blue');
   animation: glitch-anim-2 2s infinite linear alternate-reverse;
 }
 
 .glitchy-title::after {
   left: -2px;
-  text-shadow: -2px 0 #EFA649;
+  text-shadow: -2px 0 theme('colors.soft-purple-start');
   animation: glitch-anim-2 3s infinite linear alternate-reverse;
 }
 
