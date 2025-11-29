@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Terminal } from "./Terminal";
 import { useRef } from "react";
 import { SectionWrapper } from "./SectionWrapper";
+import { HeroDecoration } from "./HeroDecoration";
 
 export const Hero = () => {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -16,9 +17,9 @@ export const Hero = () => {
   return (
     <SectionWrapper
       id="hero"
-      className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative overflow-hidden min-h-[90vh]"
     >
-      <div ref={targetRef}>
+      <div ref={targetRef} className="relative z-10">
         {/* Left Column */}
         <motion.div
           initial="hidden"
@@ -32,7 +33,9 @@ export const Hero = () => {
               },
             },
           }}
+          className="relative"
         >
+          <HeroDecoration />
           <motion.h1
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -46,7 +49,7 @@ export const Hero = () => {
           >
             DEV:KD{" "}
             <span className="gradient-text">
-              Crafting secure, scalable, and engaging digital experiences.
+              <br className="block md:hidden"/>Logic Secured.
             </span>
           </motion.h1>
           <motion.p
@@ -59,7 +62,9 @@ export const Hero = () => {
               },
             }}
             className="mt-4 text-base text-text-primary max-w-lg"
-          ></motion.p>
+          >
+            A Software Developer fusing security-focused engineering with interactive design.
+          </motion.p>
           <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -90,9 +95,10 @@ export const Hero = () => {
       </div>
 
       {/* Right Column */}
-      <motion.div style={{ y }} className="hidden md:block">
+      <motion.div style={{ y }} className="hidden md:block z-10">
         <Terminal />
       </motion.div>
     </SectionWrapper>
   );
 };
+
