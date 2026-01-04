@@ -1,5 +1,4 @@
 "use client";
-import { motion } from "framer-motion";
 import { Card } from "./Card";
 
 const codeSnippet = `
@@ -9,7 +8,6 @@ const developer = {
     skills: ["C++", "Flutter", "Python"],
     currentQuest: "Mastering Unreal Engine",
     mood: "Cool & Chill",
-    securityLevel: "High"
 };
 `;
 

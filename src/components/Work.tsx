@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ProjectCard } from "./ProjectCard";
 import { SectionWrapper } from "./SectionWrapper";
 
@@ -13,7 +12,7 @@ interface Repo {
 const getGithubRepos = async (username: string): Promise<Repo[]> => {
   try {
     const res = await fetch(
-      `https://api.github.com/users/${username}/repos?sort=pushed&per_page=7`,
+      `https://api.github.com/users/${username}/repos?sort=pushed&per_page=3`,
       { next: { revalidate: 3600 } } // Revalidate every hour
     );
     if (!res.ok) {
@@ -21,7 +20,7 @@ const getGithubRepos = async (username: string): Promise<Repo[]> => {
       return [];
     }
     const repos = await res.json();
-    return repos.filter((repo: Repo) => repo.name !== username).slice(0, 6);
+    return repos.filter((repo: Repo) => repo.name !== username).slice(0, 3);
   } catch (error) {
     console.error("Error fetching GitHub repos:", error);
     return [];
@@ -37,13 +36,13 @@ export const Work = async () => {
         My Recent Work
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, i) => (
+        {projects.map((project) => (
           <ProjectCard
             key={project.id}
             title={project.name}
             description={project.description}
             tags={project.topics}
-            imageUrl={`https://socialify.git.ci/kdsecdev/${project.name}/image?theme=Dark&font=Inter`}
+            imageUrl={`https://socialify.git.ci/kdsecdev/${project.name}/image?theme=Dark`}
             projectUrl={project.html_url}
           />
         ))}

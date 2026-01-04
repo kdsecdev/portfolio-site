@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Terminal } from "./Terminal";
 import { useRef } from "react";
 import { SectionWrapper } from "./SectionWrapper";
-import { HeroDecoration } from "./HeroDecoration";
+import { InteractiveHeroDecoration } from "./InteractiveHeroDecoration";
 
 export const Hero = () => {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -17,7 +17,7 @@ export const Hero = () => {
   return (
     <SectionWrapper
       id="hero"
-      className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative overflow-hidden min-h-[90vh]"
+      className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative overflow-hidden min-h-[90vh] px-4"
     >
       <div ref={targetRef} className="relative z-10">
         {/* Left Column */}
@@ -35,7 +35,7 @@ export const Hero = () => {
           }}
           className="relative"
         >
-          <HeroDecoration />
+          <InteractiveHeroDecoration />
           <motion.h1
             variants={{
               hidden: { opacity: 0, y: 20 },
@@ -45,7 +45,7 @@ export const Hero = () => {
                 transition: { duration: 0.5, delay: 0.3 },
               },
             }}
-            className="text-5xl md:text-7xl font-bold font-display text-white"
+            className="text-4xl sm:text-5xl md:text-7xl font-bold font-display text-white"
           >
             DEV:KD{" "}
             <span className="gradient-text">
@@ -74,28 +74,30 @@ export const Hero = () => {
                 transition: { duration: 0.5, delay: 0.5 },
               },
             }}
-            className="mt-8 flex gap-4"
+            className="mt-8 flex flex-col sm:flex-row gap-4"
           >
-            <motion.button
+            <motion.a
+              href="#work"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 rounded-full bg-neon-blue text-background font-semibold"
+              className="px-6 py-3 rounded-full bg-neon-blue text-background font-semibold text-center"
             >
               View Projects
-            </motion.button>
-            <motion.button
+            </motion.a>
+            <motion.a
+              href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 rounded-full bg-surface/10 border border-white/20 text-white font-semibold backdrop-blur-md hover:bg-surface/20 transition-colors"
+              className="px-6 py-3 rounded-full bg-surface/10 border border-white/20 text-white font-semibold backdrop-blur-md hover:bg-surface/20 transition-colors text-center"
             >
-              Let's Collaborate
-            </motion.button>
+              Let&apos;s Collaborate
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
 
       {/* Right Column */}
-      <motion.div style={{ y }} className="hidden md:block z-10">
+      <motion.div style={{ y }} className="z-10">
         <Terminal />
       </motion.div>
     </SectionWrapper>

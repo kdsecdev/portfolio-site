@@ -6,7 +6,7 @@ import { SideSocialLinks } from "@/components/SideSocialLinks";
 import { InteractiveParticles } from "@/components/InteractiveParticles";
 
 export const metadata: Metadata = {
-  title: "Caleb (DEV:KD) - Portfolio",
+  title: "devKD // Digital Artisan",
   description: "A minimal, animated portfolio website.",
 };
 

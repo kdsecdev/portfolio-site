@@ -1,12 +1,11 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "framer-motion";
 import { useId } from "react";
 
-interface AnimatedInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
+type AnimatedInputProps = React.InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> & {
   label: string;
   isTextarea?: boolean;
-}
+} & MotionProps;
 
 export const AnimatedInput: React.FC<AnimatedInputProps> = ({
   label,
@@ -20,9 +19,9 @@ export const AnimatedInput: React.FC<AnimatedInputProps> = ({
     <div className="relative">
       <InputComponent
         id={id}
-        placeholder=" "
+        placeholder={label}
         rows={isTextarea ? 5 : undefined}
-        className="block w-full px-4 py-3 bg-surface border border-white/10 rounded-lg peer focus:outline-none focus:ring-1 focus:ring-accent-primary"
+        className="block w-full px-4 py-3 bg-surface border border-white/10 rounded-lg peer focus:outline-none focus:ring-1 focus:ring-accent-primary placeholder-transparent"
         {...props}
       />
       <label
