@@ -19,7 +19,7 @@ export const SectionWrapper: React.FC<SectionWrapperProps> = ({
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
-      className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 ${className}`}
+      className={`relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 ${className}`}
     >
       {children}
     </motion.section>

@@ -21,13 +21,25 @@ export default async function Home() {
   const content = await getAboutMeContent();
 
   return (
-    <main>
-      <Hero />
-      <AboutMe content={content} />
-      <Work />
-      <Achievements />
-      <Contact />
-      <Footer />
+    <main className="w-full">
+      <section className="min-h-screen w-full">
+        <Hero />
+      </section>
+      <section className="min-h-screen w-full">
+         <AboutMe content={content} />
+      </section>
+      <section className="min-h-screen w-full">
+        <Work />
+      </section>
+      <section className="min-h-screen w-full">
+        <Achievements />
+      </section>
+      <section className="min-h-screen w-full">
+        <Contact />
+      </section>
+      <section className="w-full">
+        <Footer />
+      </section>
     </main>
   );
 }

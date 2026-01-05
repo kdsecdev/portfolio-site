@@ -1,5 +1,5 @@
-import { ProjectCard } from "./ProjectCard";
 import { SectionWrapper } from "./SectionWrapper";
+import { ProjectGrid } from "./ProjectGrid";
 
 interface Repo {
   id: number;
@@ -35,18 +35,7 @@ export const Work = async () => {
       <h2 className="text-4xl font-bold font-display text-center mb-12">
         My Recent Work
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.name}
-            description={project.description}
-            tags={project.topics}
-            imageUrl={`https://socialify.git.ci/kdsecdev/${project.name}/image?theme=Dark`}
-            projectUrl={project.html_url}
-          />
-        ))}
-      </div>
+      <ProjectGrid projects={projects} />
     </SectionWrapper>
   );
 };

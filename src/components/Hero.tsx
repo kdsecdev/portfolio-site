@@ -4,6 +4,7 @@ import { Terminal } from "./Terminal";
 import { useRef } from "react";
 import { SectionWrapper } from "./SectionWrapper";
 import { InteractiveHeroDecoration } from "./InteractiveHeroDecoration";
+import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -17,89 +18,66 @@ export const Hero = () => {
   return (
     <SectionWrapper
       id="hero"
-      className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative overflow-hidden min-h-[90vh] px-4"
+      className="relative flex flex-col items-center justify-center min-h-dvh px-4 overflow-hidden pt-32 md:pt-20"
     >
-      <div ref={targetRef} className="relative z-10">
-        {/* Left Column */}
+      <div ref={targetRef} className="relative z-10 w-full max-w-5xl mx-auto flex flex-col items-center">
+        
+        {/* Subtle Background Element */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-accent-primary/5 rounded-full blur-[120px] -z-10" />
+
+        <InteractiveHeroDecoration />
+
         <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.1,
-              },
-            },
-          }}
-          className="relative"
+           initial={{ opacity: 0, y: 30 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8, ease: "easeOut" }}
+           className="text-center space-y-6 max-w-3xl"
         >
-          <InteractiveHeroDecoration />
-          <motion.h1
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.5, delay: 0.3 },
-              },
-            }}
-            className="text-4xl sm:text-5xl md:text-7xl font-bold font-display text-white"
-          >
-            DEV:KD{" "}
-            <span className="gradient-text">
-              <br className="block md:hidden"/>Logic Secured.
-            </span>
-          </motion.h1>
-          <motion.p
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.5, delay: 0.4 },
-              },
-            }}
-            className="mt-4 text-base text-text-primary max-w-lg"
-          >
-            A Software Developer fusing security-focused engineering with interactive design.
-          </motion.p>
+
+          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-display tracking-tighter text-white leading-[1] mb-6">
+            LOGIC <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">SECURED.</span>
+            <br />
+            DESIGN <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00F0FF] to-[#00F0FF]/50">ELEVATED.</span>
+          </h1>
+          
+          <p className="text-xl md:text-2xl text-text-secondary/80 max-w-2xl mx-auto font-medium leading-relaxed">
+            I craft high-performance digital experiences that merge robust security with top-tier aesthetics.
+            <br className="hidden md:block"/> No compromises.
+          </p>
+
           <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: {
-                opacity: 1,
-                y: 0,
-                transition: { duration: 0.5, delay: 0.5 },
-              },
-            }}
-            className="mt-8 flex flex-col sm:flex-row gap-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
-            <motion.a
+            <a
               href="#work"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 rounded-full bg-neon-blue text-background font-semibold text-center"
+              className="group relative px-8 py-4 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition-all flex items-center gap-2"
             >
-              View Projects
-            </motion.a>
-            <motion.a
+               View Projects
+               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a
               href="#contact"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 rounded-full bg-surface/10 border border-white/20 text-white font-semibold backdrop-blur-md hover:bg-surface/20 transition-colors text-center"
+              className="px-8 py-4 rounded-full glass-panel text-white font-medium hover:bg-white/5 transition-all border border-white/10"
             >
-              Let&apos;s Collaborate
-            </motion.a>
+              Contact Me
+            </a>
           </motion.div>
         </motion.div>
-      </div>
 
-      {/* Right Column */}
-      <motion.div style={{ y }} className="z-10">
-        <Terminal />
-      </motion.div>
+        {/* Terminal or Visual Element */}
+        <motion.div 
+          style={{ y }} 
+          className="mt-20 w-full max-w-4xl glass-panel rounded-2xl overflow-hidden shadow-2xl border border-white/5"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+        >
+          <Terminal />
+        </motion.div>
+      </div>
     </SectionWrapper>
   );
 };

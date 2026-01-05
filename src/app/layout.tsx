@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { DynamicIslandNav } from "@/components/DynamicIslandNav";
-import { CustomCursor } from "@/components/CustomCursor";
+
 import { SideSocialLinks } from "@/components/SideSocialLinks";
-import { InteractiveParticles } from "@/components/InteractiveParticles";
+import { Interactive3DBackground } from "@/components/Interactive3DBackground";
 
 export const metadata: Metadata = {
   title: "devKD // Digital Artisan",
@@ -18,8 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans">
-        <InteractiveParticles />
-        <CustomCursor />
+        <Interactive3DBackground />
         <DynamicIslandNav />
         <SideSocialLinks />
         {children}

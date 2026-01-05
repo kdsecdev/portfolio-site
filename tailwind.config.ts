@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -10,16 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#08080D",
-        surface: "#141419",
-        "text-primary": "#BCBABC",
-        "neon-blue": "#00F0FF",
-        "soft-purple-start": "#8A2BE2",
-        "soft-purple-end": "#DA70D6",
+        background: "var(--background)",
+        surface: "var(--surface)",
+        "surface-highlight": "var(--surface-highlight)",
+        "text-primary": "var(--text-primary)",
+        "text-secondary": "var(--text-secondary)",
+        "accent-primary": "var(--accent-primary)",
+        "accent-glow": "var(--accent-glow)",
+        "border-subtle": "var(--border-subtle)",
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Space Grotesk", "sans-serif"],
+        sans: ["var(--font-sans)"],
+        display: ["var(--font-display)"],
       },
     },
   },

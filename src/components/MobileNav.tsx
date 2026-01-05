@@ -23,7 +23,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: "-100%" }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="fixed inset-0 bg-background/95 backdrop-blur-lg z-50 p-6"
+          className="fixed inset-0 bg-background/95 backdrop-blur-lg z-[100] p-6"
         >
           <div className="flex justify-end">
             <motion.button

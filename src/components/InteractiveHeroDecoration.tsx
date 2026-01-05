@@ -1,63 +1,57 @@
 "use client";
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
-import { useMouse } from "@uidotdev/usehooks";
+import { motion } from "framer-motion";
 
 export const InteractiveHeroDecoration = () => {
-  const [mouse, ref] = useMouse<HTMLDivElement>();
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  useEffect(() => {
-    if (ref.current) {
-      const { width, height } = ref.current.getBoundingClientRect();
-      const newX = (mouse.x - width / 2) / (width / 2);
-      const newY = (mouse.y - height / 2) / (height / 2);
-      animate(x, newX, { type: "spring", stiffness: 100, damping: 20 });
-      animate(y, newY, { type: "spring", stiffness: 100, damping: 20 });
-    }
-  }, [mouse, ref, x, y]);
-
-  const rotateX = useTransform(y, [-1, 1], ["15deg", "-15deg"]);
-  const rotateY = useTransform(x, [-1, 1], ["-15deg", "15deg"]);
-
   return (
-    <motion.div
-      ref={ref}
-      style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="absolute inset-0 -z-10"
-    >
-      <div className="absolute inset-0 flex items-center justify-center">
+    <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <motion.div
-          style={{
-            transform: "translateZ(-50px)",
-            scale: 1.2,
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.3, 0.2],
           }}
-          className="absolute inset-0 opacity-10"
-        >
-          <div className="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neon-blue/40 to-transparent to-70%" />
-        </motion.div>
-
-        <motion.div
-          style={{
-            transform: "translateZ(50px)",
-            scale: 0.8,
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
           }}
           className="absolute inset-0"
         >
-          <div className="w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-soft-purple-start/30 to-transparent to-70%" />
+          <div className="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#00F0FF]/40 to-transparent to-70%" />
+        </motion.div>
+
+        <motion.div
+          animate={{
+            scale: [0.8, 1, 0.8],
+            opacity: [0.25, 0.35, 0.25],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="absolute inset-0"
+        >
+          <div className="w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#BF00FF]/30 to-transparent to-70%" />
         </motion.div>
         
         <motion.div
-          style={{
-            transform: "translateZ(100px)",
-            scale: 0.9,
+          animate={{
+            scale: [0.9, 1.1, 0.9],
+            opacity: [0.25, 0.35, 0.25],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2,
           }}
           className="absolute inset-0"
         >
-          <div className="w-full h-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-soft-purple-end/30 to-transparent to-70%" />
+          <div className="w-full h-full bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#00FF88]/25 to-transparent to-70%" />
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
