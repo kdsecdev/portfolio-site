@@ -4,6 +4,7 @@ import { Achievements } from "@/components/Achievements";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { AboutMe } from "@/components/AboutMe";
+import { Services } from "@/components/Services";
 
 const getAboutMeContent = async (): Promise<string> => {
   try {
@@ -30,6 +31,9 @@ export default async function Home() {
       </section>
       <section className="min-h-screen w-full">
         <Work />
+      </section>
+      <section className="w-full">
+        <Services />
       </section>
       <section className="min-h-screen w-full">
         <Achievements />

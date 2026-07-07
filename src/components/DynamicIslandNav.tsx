@@ -1,94 +1,110 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, User, Briefcase, Contact } from "lucide-react";
+import { Menu } from "lucide-react";
 import Link from "next/link";
 import { MobileNav } from "./MobileNav";
+
+// HCI: Hick's Law — fewer options = faster decisions.
+// Only the 4 primary navigation destinations, no icons (text alone is faster to scan).
+const navItems = [
+  { name: "About", href: "#about" },
+  { name: "Work", href: "#work" },
+  { name: "Services", href: "#services" },
+  { name: "Contact", href: "#contact" },
+];
 
 export const DynamicIslandNav = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const navItems = [
-    { name: "About", href: "#about", icon: <User size={18} /> },
-    { name: "Work", href: "#work", icon: <Briefcase size={18} /> },
-    { name: "Contact", href: "#contact", icon: <Contact size={18} /> },
-  ];
+  // Subtle border reinforcement after user scrolls — gives context of position
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
-      <div className="fixed top-8 left-1/2 -translate-x-1/2 z-[9999]">
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-[9999]">
         <motion.div
           onMouseEnter={() => setIsExpanded(true)}
           onMouseLeave={() => setIsExpanded(false)}
-          animate={{
-            width: isExpanded ? 420 : 160,
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 400,
-            damping: 25,
-          }}
-          className="flex items-center justify-between px-4 py-3 rounded-full border border-white/10 bg-black/80 backdrop-blur-xl shadow-lg shadow-black/20 overflow-visible"
+          animate={{ width: isExpanded ? 460 : 200 }}
+          transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          className={`flex items-center px-2 py-2 rounded-full border bg-black/85 backdrop-blur-xl shadow-xl shadow-black/30 overflow-hidden transition-colors duration-300 ${
+            scrolled ? "border-white/15" : "border-white/8"
+          }`}
         >
-          {/* Logo */}
-          <Link href="/">
-            <div className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center border border-white/10 shrink-0 hover:bg-white/10 transition-colors">
-              <span className="font-display font-bold text-sm text-white">KD</span>
+          {/* Logo — always visible, Fitts's Law: large enough tap target */}
+          <Link href="/" className="shrink-0">
+            <div className="w-9 h-9 bg-white/6 rounded-full flex items-center justify-center border border-white/10 hover:bg-white/12 hover:border-white/20 transition-all">
+              <span className="font-display font-bold text-xs text-white tracking-wide">KD</span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1 flex-1 justify-center overflow-hidden">
+          {/* Center: nav links (desktop) OR status dot (collapsed) */}
+          <div className="hidden md:flex flex-1 items-center justify-center overflow-hidden px-2">
             <AnimatePresence mode="wait">
               {isExpanded ? (
                 <motion.nav
                   key="nav"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex items-center gap-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                  className="flex items-center gap-1"
                 >
                   {navItems.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center gap-2 px-3 py-1.5 rounded-full text-gray-400 hover:text-white hover:bg-white/10 transition-all whitespace-nowrap text-sm font-medium"
+                      className="px-3 py-1.5 rounded-full text-white/55 hover:text-white hover:bg-white/8 transition-all whitespace-nowrap text-sm font-medium tracking-tight"
                     >
-                      {item.icon}
-                      <span>{item.name}</span>
+                      {item.name}
                     </a>
                   ))}
                 </motion.nav>
               ) : (
                 <motion.div
                   key="status"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ duration: 0.2 }}
-                  className="flex items-center gap-2 px-3"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.15 }}
+                  className="flex items-center gap-2"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                  <span className="text-xs text-gray-400 font-medium">Available</span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#00FF85] animate-pulse shrink-0" />
+                  <span className="text-[11px] text-white/45 font-medium whitespace-nowrap">Available</span>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          {/* Mobile Menu Trigger */}
-          <div className="md:hidden ml-auto">
-            <button
-              onClick={() => setIsMobileMenuOpen(true)}
-              className="flex items-center justify-center w-10 h-10 rounded-full hover:bg-white/10 transition-colors"
+          {/* Right: Hire Me CTA (desktop) — primary action always visible */}
+          <div className="hidden md:block shrink-0 ml-auto">
+            <a
+              href="#services"
+              className="px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap"
             >
-              <Menu size={20} className="text-white" />
-            </button>
+              Hire Me
+            </a>
           </div>
+
+          {/* Mobile: hamburger only */}
+          <button
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="md:hidden ml-auto w-9 h-9 rounded-full hover:bg-white/8 flex items-center justify-center transition-colors"
+            aria-label="Open menu"
+          >
+            <Menu size={18} className="text-white/70" />
+          </button>
         </motion.div>
       </div>
+
       <MobileNav isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
     </>
   );

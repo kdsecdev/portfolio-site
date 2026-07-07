@@ -52,24 +52,54 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
           </Card>
         </div>
 
-        {/* Image Placeholder Column */}
+        {/* Profile Image Column */}
         <div className="lg:col-span-5 w-full">
            <motion.div 
              initial={{ opacity: 0, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
              viewport={{ once: true }}
-             className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-white/10 bg-surface/30 group"
+             className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-white/10 bg-[#111]/80 group"
            >
-              {/* Glass Overlay Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent z-10 pointer-events-none" />
-              
-              {/* Placeholder Content */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 text-text-secondary/50 group-hover:text-white/80 transition-colors bg-grid-white/[0.02]">
-                  <div className="w-20 h-20 rounded-full border-2 border-dashed border-current flex items-center justify-center">
-                     <span className="text-4xl">+</span>
+              {/* Gradient mesh background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00FF85]/8 via-transparent to-[#00F0FF]/8" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+
+              {/* Decorative rings */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 rounded-full border border-[#00FF85]/10 animate-spin-slow" style={{ animationDuration: '20s' }} />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-[#00F0FF]/8 animate-spin-slow" style={{ animationDuration: '30s', animationDirection: 'reverse' }} />
+
+              {/* Center monogram */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[60%] flex flex-col items-center gap-4">
+                <div className="relative">
+                  <div className="w-28 h-28 rounded-full bg-white/5 border-2 border-[#00FF85]/30 flex items-center justify-center backdrop-blur-sm">
+                    <span className="font-display font-black text-5xl text-white/90">KD</span>
                   </div>
-                  <span className="font-mono text-sm uppercase tracking-widest">Add Image</span>
+                  {/* Glow */}
+                  <div className="absolute inset-0 rounded-full bg-[#00FF85]/10 blur-xl -z-10" />
+                </div>
+                <div className="text-center">
+                  <p className="font-display font-bold text-white text-lg">Caleb Botchway</p>
+                  <p className="font-mono text-xs text-[#00FF85] mt-1">@iamdevkd</p>
+                </div>
               </div>
+
+              {/* Bottom info bar */}
+              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black/90 via-black/60 to-transparent">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#00FF85] animate-pulse" />
+                  <span className="font-mono text-xs text-[#00FF85] uppercase tracking-widest">
+                    Full-Stack Developer · Ghana 🇬🇭
+                  </span>
+                </div>
+              </div>
+
+              {/* Corner accent */}
+              <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-black/50 border border-white/10 backdrop-blur-sm">
+                <span className="font-mono text-[10px] text-white/60 uppercase tracking-widest">EST. 2022</span>
+              </div>
+
+              {/* Glass overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/3 to-transparent pointer-events-none group-hover:from-white/5 transition-all duration-500" />
            </motion.div>
         </div>
       </div>

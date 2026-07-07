@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { DynamicIslandNav } from "@/components/DynamicIslandNav";
-
 import { SideSocialLinks } from "@/components/SideSocialLinks";
 import { Interactive3DBackground } from "@/components/Interactive3DBackground";
+import { PaystackDonateButton } from "@/components/PaystackDonateButton";
 
 const siteUrl = "https://iamdevkd.com";
 
@@ -77,6 +77,7 @@ export default function RootLayout({
         <Interactive3DBackground />
         <DynamicIslandNav />
         <SideSocialLinks />
+        <PaystackDonateButton />
         {children}
       </body>
     </html>

@@ -1,5 +1,5 @@
 "use client";
-import { Github, Linkedin, Instagram, Twitter, Mail, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Instagram, Twitter, Mail, ArrowUpRight, Heart } from "lucide-react";
 import Link from "next/link";
 
 const socialLinks = [
@@ -33,6 +33,7 @@ const socialLinks = [
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#work" },
+  { label: "Services", href: "#services" },
   { label: "Achievements", href: "#achievements" },
   { label: "Contact", href: "#contact" },
 ];
@@ -136,10 +137,20 @@ export const Footer = () => {
           <p className="text-text-secondary text-xs">
             &copy; {new Date().getFullYear()} Caleb Botchway (DevKD). All rights reserved.
           </p>
-          <p className="text-text-secondary text-xs font-mono">
-            Built with Next.js · Deployed on{" "}
-            <span className="text-white">iamdevkd.com</span>
-          </p>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://paystack.shop/pay/devkd-support"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-text-secondary hover:text-[#00FF85] transition-colors text-xs"
+            >
+              <Heart size={12} className="text-[#00FF85]" />
+              Support DevKD
+            </a>
+            <p className="text-text-secondary text-xs font-mono">
+              Built with Next.js · <span className="text-white">iamdevkd.com</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
