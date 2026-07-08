@@ -16,7 +16,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
           hidden: { opacity: 0, y: 20 },
           visible: { opacity: 1, y: 0 },
         }}
-        className="text-4xl md:text-5xl font-bold font-display text-center mb-16 tracking-tight"
+        className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-center mb-10 sm:mb-16 tracking-tight"
       >
         The Code / The Vibe
       </motion.h2>
@@ -25,7 +25,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
         
         {/* Content Column */}
         <div className="lg:col-span-7 space-y-8">
-           <Card className="p-8 md:p-10 bg-white/5 border border-white/10 backdrop-blur-md">
+           <Card className="p-6 md:p-8 lg:p-10 bg-white/5 border border-white/10 backdrop-blur-md">
             <div className="prose prose-invert prose-lg max-w-none text-text-primary/90">
               <ReactMarkdown
                 components={{
@@ -58,7 +58,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
              initial={{ opacity: 0, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
              viewport={{ once: true }}
-             className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-white/10 bg-[#111]/80 group"
+             className="relative aspect-[3/3] sm:aspect-[3/4] w-full rounded-2xl overflow-hidden border border-white/10 bg-[#111]/80 group"
            >
               {/* Gradient mesh background */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#00FF85]/8 via-transparent to-[#00F0FF]/8" />
@@ -106,7 +106,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
       
       {/* Full-width Tech Stack Banner */}
       <div className="w-full mt-16">
-        <h3 className="font-display text-3xl font-bold text-white tracking-tight text-center mb-8">
+        <h3 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight text-center mb-8">
           Tech Stack
         </h3>
         <TechStack />

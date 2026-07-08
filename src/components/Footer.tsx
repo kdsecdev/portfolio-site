@@ -42,18 +42,18 @@ export const Footer = () => {
   return (
     <footer className="border-t border-white/8 bg-black/40 backdrop-blur-md">
       {/* Top CTA Banner */}
-      <div className="border-b border-white/8 py-16 px-6">
+      <div className="border-b border-white/8 py-10 sm:py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <p className="font-mono text-xs text-accent-primary uppercase tracking-widest mb-4">
             Open to opportunities
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-6 tracking-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-5 sm:mb-6 tracking-tight">
             Ready to build something
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FF85] to-[#00F0FF]">
               {" "}great?
             </span>
           </h2>
-          <p className="text-text-secondary mb-10 text-lg max-w-xl mx-auto">
+          <p className="text-text-secondary mb-7 sm:mb-10 text-base sm:text-lg max-w-xl mx-auto">
             Whether it&apos;s a startup idea, a full-scale system, or just a
             conversation — I&apos;m all ears.
           </p>
@@ -67,8 +67,8 @@ export const Footer = () => {
       </div>
 
       {/* Footer Body */}
-      <div className="max-w-6xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10 sm:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
@@ -133,11 +133,11 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
           <p className="text-text-secondary text-xs">
             &copy; {new Date().getFullYear()} Caleb Botchway (DevKD). All rights reserved.
           </p>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <a
               href="https://paystack.shop/pay/devkd-support"
               target="_blank"

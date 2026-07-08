@@ -9,21 +9,21 @@ export const Hero = () => {
   return (
     <SectionWrapper
       id="hero"
-      className="relative flex flex-col items-center justify-center h-dvh max-h-screen px-6 overflow-hidden"
+      className="relative flex flex-col items-center justify-center min-h-[100dvh] max-h-screen px-4 sm:px-6 overflow-hidden"
     >
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[100px] -z-10 pointer-events-none" />
 
       <InteractiveHeroDecoration />
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-7">
+      <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-5 sm:gap-7">
 
         {/* Headline — the single focal point */}
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tighter text-white leading-[1.02] text-center"
+          className="text-4xl min-[480px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black font-display tracking-tighter text-white leading-[1.02] text-center"
         >
           BUILD FASTER.
           <br />
@@ -48,7 +48,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.5, ease: "easeOut" }}
-          className="flex items-center gap-3"
+          className="flex flex-wrap items-center justify-center gap-3"
         >
           {/* Primary — high contrast, calls to action */}
           <a
@@ -69,7 +69,7 @@ export const Hero = () => {
 
         {/* Terminal — compact code preview */}
         <motion.div
-          className="w-full max-w-xl glass-panel rounded-2xl overflow-hidden border border-white/6 shadow-2xl"
+          className="w-full max-w-xl glass-panel rounded-2xl overflow-hidden border border-white/6 shadow-2xl hidden sm:block"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.65, ease: "easeOut" }}
@@ -83,7 +83,7 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
-        className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
+        className="absolute bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
       >
         <motion.div
           animate={{ y: [0, 5, 0] }}

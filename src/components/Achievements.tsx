@@ -30,7 +30,7 @@ export const Achievements = () => {
 
   return (
     <SectionWrapper id="achievements">
-      <h2 className="text-4xl font-bold font-display text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold font-display text-center mb-8 sm:mb-12">
         My Achievements
       </h2>
       <motion.div 
@@ -41,7 +41,7 @@ export const Achievements = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
       >
         {achievements.map((achievement, index) => (
           <Card key={index} className="flex flex-col gap-4 hover:border-white/20 transition-colors">

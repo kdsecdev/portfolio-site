@@ -78,7 +78,7 @@ export const Services = () => {
   return (
     <SectionWrapper id="services">
       {/* Header */}
-      <div className="text-center mb-16">
+      <div className="text-center mb-10 sm:mb-16">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ export const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-5xl font-bold font-display tracking-tight mb-4"
+          className="text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight mb-4"
         >
           Services & Expertise
         </motion.h2>
@@ -113,7 +113,7 @@ export const Services = () => {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.1 }}
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-16"
       >
         {services.map((service) => (
           <motion.div
@@ -169,7 +169,7 @@ export const Services = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="relative rounded-2xl overflow-hidden border border-white/10 p-8 md:p-12 text-center"
+        className="relative rounded-2xl overflow-hidden border border-white/10 p-6 sm:p-8 md:p-12 text-center"
       >
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#00FF85]/8 via-transparent to-[#00F0FF]/8 pointer-events-none" />
@@ -178,7 +178,7 @@ export const Services = () => {
         <p className="font-mono text-xs text-accent-primary uppercase tracking-widest mb-4">
           Ready to collaborate?
         </p>
-        <h3 className="text-3xl md:text-4xl font-bold font-display text-white mb-4 tracking-tight">
+        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-white mb-4 tracking-tight">
           Let&apos;s build something{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00FF85] to-[#00F0FF]">
             extraordinary.

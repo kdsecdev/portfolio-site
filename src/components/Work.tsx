@@ -80,15 +80,15 @@ export const Work = async () => {
 
   return (
     <SectionWrapper id="work">
-      <h2 className="text-4xl md:text-5xl font-bold font-display text-center mb-4 tracking-tight">
+      <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-center mb-3 sm:mb-4 tracking-tight">
         My Work
       </h2>
-      <p className="text-center text-text-secondary mb-16 text-lg">
+      <p className="text-center text-text-secondary mb-10 sm:mb-16 text-base sm:text-lg">
         A selection of projects I&apos;m proud of — from hackathon builds to production apps.
       </p>
 
       {/* Featured Projects */}
-      <div className="mb-16">
+      <div className="mb-10 sm:mb-16">
         <div className="flex items-center gap-3 mb-8">
           <div className="h-px flex-1 bg-white/10" />
           <span className="text-xs font-mono text-accent-primary uppercase tracking-widest px-4">
@@ -96,7 +96,7 @@ export const Work = async () => {
           </span>
           <div className="h-px flex-1 bg-white/10" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {featuredProjects.map((project) => (
             <div
               key={project.id}

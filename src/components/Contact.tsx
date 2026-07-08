@@ -60,10 +60,10 @@ export const Contact = () => {
         }}
         className="max-w-5xl mx-auto"
       >
-        <h2 className="text-4xl md:text-5xl font-bold font-display text-center mb-4 tracking-tight">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display text-center mb-3 sm:mb-4 tracking-tight">
           Get In Touch
         </h2>
-        <p className="text-center text-text-secondary mb-16 text-lg">
+        <p className="text-center text-text-secondary mb-10 sm:mb-16 text-base sm:text-lg">
           Got a project in mind? Let&apos;s build something great together.
         </p>
 

@@ -28,10 +28,13 @@ body {
   color: var(--text-primary);
   font-family: var(--font-sans);
   overflow-x: hidden;
-  selection-background-color: var(--accent-primary);
-  selection-color: var(--background);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--accent-primary);
+  color: var(--background);
 }
 
 /* Typography Utilities */
@@ -42,11 +45,11 @@ h1, h2, h3, h4, h5, h6 {
 /* Subtle Grid Background */
 body::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-image: 
     linear-gradient(var(--border-subtle) 1px, transparent 1px),
     linear-gradient(90deg, var(--border-subtle) 1px, transparent 1px);

@@ -5,23 +5,28 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
 
+// Pre-generated at module load time — stable across all renders, satisfies purity rules
+const PARTICLE_COUNT = 700;
+const particlePositions = (() => {
+  const coords = new Float32Array(PARTICLE_COUNT * 3);
+  for (let i = 0; i < PARTICLE_COUNT; i++) {
+    const theta = 2 * Math.PI * Math.random();
+    const phi = Math.acos(2 * Math.random() - 1);
+    const r = 4 + Math.random() * 2;
+    coords[i * 3]     = r * Math.sin(phi) * Math.cos(theta);
+    coords[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+    coords[i * 3 + 2] = r * Math.cos(phi);
+  }
+  return coords;
+})();
+
 // Reduced from 1500 → 700 particles for ~2× faster GPU workload on mobile
 function MinimalParticles() {
   const ref = useRef<THREE.Points>(null);
   const { mouse } = useThree();
 
-  const positions = useMemo(() => {
-    const coords = new Float32Array(700 * 3);
-    for (let i = 0; i < 700; i++) {
-      const theta = 2 * Math.PI * Math.random();
-      const phi = Math.acos(2 * Math.random() - 1);
-      const r = 4 + Math.random() * 2;
-      coords[i * 3]     = r * Math.sin(phi) * Math.cos(theta);
-      coords[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
-      coords[i * 3 + 2] = r * Math.cos(phi);
-    }
-    return coords;
-  }, []);
+  // useMemo here is fine — positions are derived from the stable module constant
+  const positions = useMemo(() => particlePositions, []);
 
   useFrame((_, delta) => {
     if (!ref.current) return;
@@ -55,12 +60,15 @@ function CssGrid() {
 }
 
 export const Interactive3DBackground = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  // Lazy initializer — reads matchMedia once synchronously, no effect needed
+  const [isMobile, setIsMobile] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    return window.matchMedia("(max-width: 768px)").matches;
+  });
 
-  // Skip heavy 3D on mobile — use pure CSS fallback instead
+  // Subscribe to resize changes without calling setState inside the effect body
   useEffect(() => {
     const mq = window.matchMedia("(max-width: 768px)");
-    setIsMobile(mq.matches);
     const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
     mq.addEventListener("change", handler);
     return () => mq.removeEventListener("change", handler);
