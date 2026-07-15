@@ -5,14 +5,14 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { AboutMe } from "@/components/AboutMe";
 import { Services } from "@/components/Services";
+import { promises as fs } from "fs";
+import path from "path";
 
 const getAboutMeContent = async (): Promise<string> => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/about-me-content.md`, { next: { revalidate: 3600 } });
-    if (!res.ok) {
-      return "Failed to load About Me content.";
-    }
-    return await res.text();
+    const filePath = path.join(process.cwd(), "public", "about-me-content.md");
+    const content = await fs.readFile(filePath, "utf-8");
+    return content;
   } catch {
     return "An error occurred while loading content.";
   }
