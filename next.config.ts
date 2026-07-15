@@ -39,6 +39,14 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "placehold.co",
       },
+      {
+        protocol: "https",
+        hostname: "img.icons8.com",
+      },
+      {
+        protocol: "https",
+        hostname: "ghchart.rshah.org",
+      },
     ],
   },
 

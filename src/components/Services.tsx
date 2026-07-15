@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import { SectionWrapper } from "./SectionWrapper";
-import { ArrowRight, Code2, Layout, Server, Shield, Smartphone, Cpu } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const services = [
   {
-    icon: <Layout size={28} />,
+    iconSrc: "https://img.icons8.com/fluency/96/web-design.png",
+    iconAlt: "UI/UX Design",
     title: "UI / UX Design",
     tagline: "Beautiful interfaces that convert",
     description:
@@ -15,7 +16,8 @@ const services = [
     color: "#00F0FF",
   },
   {
-    icon: <Code2 size={28} />,
+    iconSrc: "https://img.icons8.com/fluency/96/source-code.png",
+    iconAlt: "Full-Stack Development",
     title: "Full-Stack Development",
     tagline: "End-to-end web applications",
     description:
@@ -24,7 +26,8 @@ const services = [
     color: "#00FF85",
   },
   {
-    icon: <Server size={28} />,
+    iconSrc: "https://img.icons8.com/fluency/96/server.png",
+    iconAlt: "Backend & API Engineering",
     title: "Backend & API Engineering",
     tagline: "Fast, secure, and scalable APIs",
     description:
@@ -33,7 +36,8 @@ const services = [
     color: "#A855F7",
   },
   {
-    icon: <Smartphone size={28} />,
+    iconSrc: "https://img.icons8.com/fluency/96/smartphone-tablet.png",
+    iconAlt: "Mobile Development",
     title: "Mobile Development",
     tagline: "Cross-platform apps with Flutter",
     description:
@@ -42,7 +46,8 @@ const services = [
     color: "#F59E0B",
   },
   {
-    icon: <Shield size={28} />,
+    iconSrc: "https://img.icons8.com/fluency/96/security-checked.png",
+    iconAlt: "Secure Systems",
     title: "Secure Systems",
     tagline: "Security-first development",
     description:
@@ -51,7 +56,8 @@ const services = [
     color: "#FF4466",
   },
   {
-    icon: <Cpu size={28} />,
+    iconSrc: "https://img.icons8.com/fluency/96/artificial-intelligence.png",
+    iconAlt: "AI / ML Integration",
     title: "AI / ML Integration",
     tagline: "Smart features, real-world impact",
     description:
@@ -94,7 +100,7 @@ export const Services = () => {
           transition={{ delay: 0.1 }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight mb-4"
         >
-          Services & Expertise
+          Services &amp; Expertise
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -128,16 +134,22 @@ export const Services = () => {
               style={{ backgroundColor: `${service.color}20` }}
             />
 
-            {/* Icon */}
+            {/* Icon — icons8 image */}
             <div
-              className="w-12 h-12 rounded-xl flex items-center justify-center border transition-colors duration-300"
+              className="w-14 h-14 rounded-2xl flex items-center justify-center border transition-all duration-300 group-hover:scale-105"
               style={{
                 backgroundColor: `${service.color}10`,
-                borderColor: `${service.color}30`,
-                color: service.color,
+                borderColor: `${service.color}28`,
               }}
             >
-              {service.icon}
+              <img
+                src={service.iconSrc}
+                alt={service.iconAlt}
+                width={36}
+                height={36}
+                className="w-9 h-9 object-contain"
+                loading="lazy"
+              />
             </div>
 
             {/* Content */}

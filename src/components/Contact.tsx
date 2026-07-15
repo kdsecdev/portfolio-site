@@ -4,13 +4,34 @@ import { AnimatedInput } from "./AnimatedInput";
 import { SectionWrapper } from "./SectionWrapper";
 import { Card } from "./Card";
 import { useState } from "react";
-import { Send, CheckCircle, XCircle, Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Send, CheckCircle, XCircle } from "lucide-react";
+
+// icons8 helper
+const Icon8 = ({ src, alt, size = 18 }: { src: string; alt: string; size?: number }) => (
+  <img src={src} alt={alt} width={size} height={size} className="object-contain shrink-0" loading="lazy" />
+);
 
 const quickLinks = [
-  { label: "Email", href: "mailto:devkd843@gmail.com", icon: <Mail size={16} /> },
-  { label: "GitHub", href: "https://github.com/kdsecdev", icon: <Github size={16} /> },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/caleb-botchway-3b5aa7265", icon: <Linkedin size={16} /> },
-  { label: "Twitter / X", href: "https://x.com/devkd999", icon: <Twitter size={16} /> },
+  {
+    label: "Email",
+    href: "mailto:devkd843@gmail.com",
+    icon: <Icon8 src="https://img.icons8.com/fluency/48/gmail-new.png" alt="Email" />,
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/kdsecdev",
+    icon: <Icon8 src="https://img.icons8.com/fluency/48/github.png" alt="GitHub" />,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/caleb-botchway-3b5aa7265",
+    icon: <Icon8 src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn" />,
+  },
+  {
+    label: "Twitter / X",
+    href: "https://x.com/devkd999",
+    icon: <Icon8 src="https://img.icons8.com/fluency/48/twitterx--v1.png" alt="Twitter / X" />,
+  },
 ];
 
 export const Contact = () => {
@@ -89,7 +110,7 @@ export const Contact = () => {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10 text-text-secondary hover:text-white hover:border-accent-primary/50 hover:bg-accent-primary/5 transition-all group"
                 >
-                  <span className="text-accent-primary group-hover:scale-110 transition-transform">
+                  <span className="opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-200">
                     {link.icon}
                   </span>
                   <span className="text-sm font-medium">{link.label}</span>

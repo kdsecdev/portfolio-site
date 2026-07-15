@@ -1,32 +1,37 @@
 "use client";
-import { Github, Linkedin, Instagram, Twitter, Mail, ArrowUpRight, Heart } from "lucide-react";
+import { ArrowUpRight, Heart } from "lucide-react";
 import Link from "next/link";
+
+// icons8 social icons
+const Icon8 = ({ src, alt }: { src: string; alt: string }) => (
+  <img src={src} alt={alt} width={20} height={20} className="w-5 h-5 object-contain" loading="lazy" />
+);
 
 const socialLinks = [
   {
     label: "GitHub",
     href: "https://github.com/kdsecdev",
-    icon: <Github size={18} />,
+    icon: <Icon8 src="https://img.icons8.com/fluency/48/github.png" alt="GitHub" />,
   },
   {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/caleb-botchway-3b5aa7265",
-    icon: <Linkedin size={18} />,
+    icon: <Icon8 src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn" />,
   },
   {
     label: "Instagram",
     href: "https://instagram.com/x9z_dev",
-    icon: <Instagram size={18} />,
+    icon: <Icon8 src="https://img.icons8.com/fluency/48/instagram-new.png" alt="Instagram" />,
   },
   {
     label: "Twitter / X",
     href: "https://x.com/devkd999",
-    icon: <Twitter size={18} />,
+    icon: <Icon8 src="https://img.icons8.com/fluency/48/twitterx--v1.png" alt="Twitter / X" />,
   },
   {
     label: "Email",
     href: "mailto:devkd843@gmail.com",
-    icon: <Mail size={18} />,
+    icon: <Icon8 src="https://img.icons8.com/fluency/48/gmail-new.png" alt="Email" />,
   },
 ];
 
@@ -81,7 +86,7 @@ export const Footer = () => {
               </div>
             </div>
             <p className="text-text-secondary text-sm leading-relaxed max-w-xs">
-              Full-stack & systems developer based in Ghana 🇬🇭. Building secure,
+              Full-stack &amp; systems developer based in Ghana 🇬🇭. Building secure,
               high-performance digital experiences.
             </p>
           </div>
@@ -119,7 +124,9 @@ export const Footer = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2.5 text-text-secondary hover:text-white transition-colors text-sm group"
                   >
-                    <span className="text-accent-primary">{link.icon}</span>
+                    <span className="shrink-0 opacity-80 group-hover:opacity-100 transition-opacity group-hover:scale-110 transition-transform duration-200">
+                      {link.icon}
+                    </span>
                     {link.label}
                     <ArrowUpRight
                       size={12}
@@ -135,7 +142,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-10 sm:mt-12 pt-6 sm:pt-8 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-center sm:text-left">
           <p className="text-text-secondary text-xs">
-            &copy; {new Date().getFullYear()} Caleb Botchway (DevKD). All rights reserved.
+            &copy; {new Date().getFullYear()} Caleb Botchway (Dev KD). All rights reserved.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <a
@@ -145,7 +152,7 @@ export const Footer = () => {
               className="flex items-center gap-1.5 text-text-secondary hover:text-[#00FF85] transition-colors text-xs"
             >
               <Heart size={12} className="text-[#00FF85]" />
-              Support DevKD
+              Support Dev KD
             </a>
             <p className="text-text-secondary text-xs font-mono">
               Built with Next.js · <span className="text-white">iamdevkd.com</span>
