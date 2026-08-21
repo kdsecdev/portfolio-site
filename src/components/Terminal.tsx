@@ -1,27 +1,42 @@
 "use client";
 import { Card } from "./Card";
 
-const codeSnippet = `
-// DevKD_Profile.js
-const developer = {
-    name: "DevKD",
-    skills: ["C++", "Flutter", "Python"],
-    currentQuest: "Mastering Unreal Engine",
-    mood: "Cool & Chill",
-};
-`;
-
 export const Terminal = () => {
   return (
-    <Card className="relative p-4 font-mono text-xs">
-      <div className="absolute top-3 left-4 flex gap-2">
-        <div className="w-3 h-3 rounded-full bg-red-500" />
-        <div className="w-3 h-3 rounded-full bg-yellow-500" />
-        <div className="w-3 h-3 rounded-full bg-green-500" />
+    <Card className="relative p-5 font-mono text-xs bg-[#0c0c0c]/90 border-white/8">
+      {/* Header bar */}
+      <div className="flex items-center justify-between pb-3 border-b border-white/6 mb-4">
+        <div className="flex gap-2">
+          <div className="w-2.5 h-2.5 rounded-full bg-[#FF5500]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#FFA043]" />
+          <div className="w-2.5 h-2.5 rounded-full bg-[#333333]" />
+        </div>
+        <div className="font-lcd text-[11px] text-[#FFA043]/80 tracking-wider">
+          DEV_KD_TERMINAL // v2.4.0
+        </div>
       </div>
-      <pre className="text-sm text-text-primary mt-6 whitespace-pre-wrap">
-        <code>{codeSnippet}</code>
-      </pre>
+
+      <div className="space-y-1 text-[13px] leading-relaxed">
+        <p className="text-white/40">
+          <span className="text-[#FF6B00] font-bold">caleb@devkd</span>:<span className="text-[#FFA043]">~</span>$ cat profile.json
+        </p>
+        <div className="text-white/80 pt-1 font-mono">
+          <p>&#123;</p>
+          <p className="pl-4">
+            <span className="text-[#FF8533]">&quot;name&quot;</span>: <span className="text-[#FFA043]">&quot;Caleb Botchway (DevKD)&quot;</span>,
+          </p>
+          <p className="pl-4">
+            <span className="text-[#FF8533]">&quot;focus&quot;</span>: [<span className="text-white/90">&quot;Full-Stack&quot;</span>, <span className="text-white/90">&quot;Systems&quot;</span>, <span className="text-white/90">&quot;Security&quot;</span>],
+          </p>
+          <p className="pl-4">
+            <span className="text-[#FF8533]">&quot;stack&quot;</span>: [<span className="text-white/90">&quot;Next.js&quot;</span>, <span className="text-white/90">&quot;C++&quot;</span>, <span className="text-white/90">&quot;Python&quot;</span>, <span className="text-white/90">&quot;Flutter&quot;</span>],
+          </p>
+          <p className="pl-4">
+            <span className="text-[#FF8533]">&quot;status&quot;</span>: <span className="text-[#FFA043] font-lcd">&quot;Building &amp; Available&quot;</span>
+          </p>
+          <p>&#125;</p>
+        </div>
+      </div>
     </Card>
   );
 };

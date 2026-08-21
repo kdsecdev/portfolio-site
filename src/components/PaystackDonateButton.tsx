@@ -11,14 +11,14 @@ const tiers = [
     icon: <Coffee size={20} />,
     label: "Buy me a coffee",
     amount: "GHS 10",
-    sub: "A small token of appreciation",
+    sub: "A token of appreciation ☕",
     href: PAYSTACK_LINK,
   },
   {
     icon: <Zap size={20} />,
     label: "Support my work",
     amount: "GHS 50",
-    sub: "Help me build more cool stuff",
+    sub: "Fuels high-impact engineering",
     href: PAYSTACK_LINK,
   },
   {
@@ -43,15 +43,15 @@ export const PaystackDonateButton = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="fixed bottom-6 right-6 z-[9990] flex items-center gap-2 px-4 py-3 rounded-full shadow-2xl border border-[#00FF85]/30 bg-black/90 backdrop-blur-xl text-white text-sm font-semibold group hover:border-[#00FF85]/60 transition-all"
+        className="fixed bottom-6 right-6 z-[9990] flex items-center gap-2.5 px-4 py-3 rounded-full shadow-2xl border border-[#FF6B00]/40 bg-black/90 backdrop-blur-xl text-white text-sm font-semibold group hover:border-[#FF6B00] hover:shadow-[0_0_20px_rgba(255,107,0,0.35)] transition-all"
         aria-label="Support DevKD via Paystack"
       >
-        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#00FF85]/15 text-[#00FF85] group-hover:scale-110 transition-transform">
+        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#FF6B00]/15 text-[#FF6B00] group-hover:scale-110 transition-transform">
           <Heart size={14} fill="currentColor" />
         </span>
-        <span className="hidden sm:inline text-[#00FF85]">Support Me</span>
+        <span className="hidden sm:inline text-[#FFA043] font-medium font-sans">Support Me</span>
         {/* Glow ring */}
-        <span className="absolute inset-0 rounded-full ring-2 ring-[#00FF85]/10 animate-ping pointer-events-none" />
+        <span className="absolute inset-0 rounded-full ring-2 ring-[#FF6B00]/15 animate-ping pointer-events-none" />
       </motion.button>
 
       {/* Modal */}
@@ -64,7 +64,7 @@ export const PaystackDonateButton = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[9991]"
+              className="fixed inset-0 bg-black/75 backdrop-blur-md z-[9991]"
             />
 
             {/* Panel */}
@@ -73,10 +73,10 @@ export const PaystackDonateButton = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 20, scale: 0.97 }}
               transition={{ type: "spring", stiffness: 350, damping: 28 }}
-              className="fixed bottom-20 right-6 z-[9992] w-80 rounded-2xl bg-[#111] border border-white/10 shadow-2xl overflow-hidden"
+              className="fixed bottom-20 right-6 z-[9992] w-84 max-w-[calc(100vw-3rem)] rounded-2xl bg-[#0f0f0f] border border-[#FF6B00]/30 shadow-2xl shadow-black/80 overflow-hidden"
             >
               {/* Header */}
-              <div className="relative p-5 pb-4 border-b border-white/8 bg-gradient-to-br from-[#00FF85]/8 to-transparent">
+              <div className="relative p-5 pb-4 border-b border-white/8 bg-gradient-to-br from-[#FF6B00]/12 to-transparent">
                 <button
                   onClick={() => setIsOpen(false)}
                   className="absolute top-4 right-4 w-7 h-7 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center transition-colors"
@@ -84,16 +84,16 @@ export const PaystackDonateButton = () => {
                   <X size={14} className="text-white/60" />
                 </button>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#00FF85]/15 flex items-center justify-center">
-                    <Heart size={18} className="text-[#00FF85]" fill="currentColor" />
+                  <div className="w-10 h-10 rounded-full bg-[#FF6B00]/15 border border-[#FF6B00]/30 flex items-center justify-center">
+                    <Heart size={18} className="text-[#FF6B00]" fill="currentColor" />
                   </div>
                   <div>
                     <p className="font-display font-bold text-white text-sm">Support DevKD</p>
-                    <p className="text-xs text-text-secondary mt-0.5">Powered by Paystack 🇬🇭</p>
+                    <p className="font-lcd text-[11px] text-[#FFA043] mt-0.5">GATEWAY: PAYSTACK_GH</p>
                   </div>
                 </div>
-                <p className="text-xs text-text-secondary mt-3 leading-relaxed">
-                  If my work has helped or inspired you, consider buying me a coffee. Every bit fuels the next project! ☕
+                <p className="text-xs text-white/60 mt-3 leading-relaxed font-sans">
+                  If my work has helped or inspired you, consider buying me a coffee. Every bit fuels open-source tooling! ☕
                 </p>
               </div>
 
@@ -105,16 +105,16 @@ export const PaystackDonateButton = () => {
                     href={tier.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 p-3 rounded-xl bg-white/4 border border-white/8 hover:border-[#00FF85]/40 hover:bg-[#00FF85]/5 transition-all group cursor-pointer"
+                    className="flex items-center gap-3 p-3 rounded-xl bg-white/4 border border-white/8 hover:border-[#FF6B00]/50 hover:bg-[#FF6B00]/8 transition-all group cursor-pointer"
                   >
-                    <span className="w-9 h-9 rounded-full bg-[#00FF85]/10 border border-[#00FF85]/20 flex items-center justify-center text-[#00FF85] group-hover:scale-110 transition-transform shrink-0">
+                    <span className="w-9 h-9 rounded-full bg-[#FF6B00]/10 border border-[#FF6B00]/25 flex items-center justify-center text-[#FFA043] group-hover:scale-110 transition-transform shrink-0">
                       {tier.icon}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-white truncate">{tier.label}</p>
-                      <p className="text-xs text-text-secondary truncate">{tier.sub}</p>
+                      <p className="text-sm font-semibold text-white truncate font-sans">{tier.label}</p>
+                      <p className="text-xs text-white/50 truncate font-sans">{tier.sub}</p>
                     </div>
-                    <span className="text-xs font-mono font-bold text-[#00FF85] shrink-0">
+                    <span className="font-lcd text-xs font-bold text-[#FFA043] shrink-0">
                       {tier.amount}
                     </span>
                   </a>
@@ -124,7 +124,7 @@ export const PaystackDonateButton = () => {
                   href={PAYSTACK_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block w-full text-center mt-1 py-3 rounded-xl bg-[#00FF85] text-black text-sm font-bold hover:bg-[#00FF85]/90 transition-colors"
+                  className="block w-full text-center mt-2 py-3 rounded-xl bg-[#FF6B00] text-black text-sm font-bold hover:bg-[#FF7A00] transition-all shadow-[0_0_15px_rgba(255,107,0,0.3)]"
                 >
                   Custom Amount →
                 </a>
@@ -132,8 +132,8 @@ export const PaystackDonateButton = () => {
 
               {/* Footer */}
               <div className="px-4 pb-4 text-center">
-                <p className="text-[10px] text-text-secondary/60">
-                  Secure payments via Paystack · No account needed
+                <p className="font-lcd text-[10px] text-white/40">
+                  SECURE_PAYMENTS // ZERO_ACCOUNT_NEEDED
                 </p>
               </div>
             </motion.div>

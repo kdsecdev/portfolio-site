@@ -15,7 +15,6 @@ interface ProjectCardProps {
   homepage?: string;
 }
 
-// Language colour dots — GitHub's palette
 const languageColors: Record<string, string> = {
   Python: "#3572A5",
   TypeScript: "#3178c6",
@@ -27,6 +26,7 @@ const languageColors: Record<string, string> = {
   Shell: "#89e051",
   Rust: "#dea584",
   Go: "#00ADD8",
+  "C++": "#f34b7d",
 };
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -39,19 +39,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   forks = 0,
   homepage,
 }) => {
-  const langColor = language ? (languageColors[language] ?? "#888") : null;
+  const langColor = language ? (languageColors[language] ?? "#FF6B00") : null;
 
   return (
     <motion.div
       whileHover={{ y: -4, transition: { type: "spring", stiffness: 300, damping: 20 } }}
-      className="flex flex-col gap-4 p-5 rounded-xl bg-[#0d1117] border border-white/10 hover:border-white/20 transition-colors h-full"
+      className="flex flex-col gap-4 p-5 rounded-2xl bg-[#111111] border border-white/10 hover:border-[#FF6B00]/40 transition-colors h-full shadow-lg hover:shadow-[0_0_15px_rgba(255,107,0,0.12)]"
     >
       {/* Header */}
       <div className="flex items-start justify-between gap-2">
         <div className="flex items-center gap-2 min-w-0">
-          {/* GitHub-style book icon */}
           <svg
-            className="w-4 h-4 text-text-secondary shrink-0"
+            className="w-4 h-4 text-[#FFA043] shrink-0"
             viewBox="0 0 16 16"
             fill="currentColor"
             aria-hidden="true"
@@ -62,18 +61,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             href={projectUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-semibold text-[#58a6ff] hover:underline text-sm truncate"
+            className="font-semibold text-white hover:text-[#FFA043] text-sm truncate font-sans transition-colors"
           >
             {title}
           </Link>
         </div>
-        <span className="shrink-0 text-xs px-2 py-0.5 rounded-full border border-white/15 text-white/50 font-mono">
-          public
+        <span className="shrink-0 font-lcd text-[10px] px-2 py-0.5 rounded bg-white/5 border border-white/10 text-white/50">
+          PUBLIC
         </span>
       </div>
 
       {/* Description */}
-      <p className="text-xs text-text-secondary leading-relaxed flex-1 line-clamp-3">
+      <p className="text-xs text-white/60 leading-relaxed flex-1 line-clamp-3 font-sans">
         {description || "No description provided."}
       </p>
 
@@ -83,7 +82,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           {tags.slice(0, 4).map((tag) => (
             <span
               key={tag}
-              className="px-2 py-0.5 text-xs rounded-full bg-[#388bfd1a] text-[#58a6ff] font-mono border border-[#388bfd33]"
+              className="px-2 py-0.5 text-xs rounded-full bg-[#FF6B00]/10 text-[#FFA043] font-mono border border-[#FF6B00]/20"
             >
               {tag}
             </span>
@@ -92,12 +91,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
       )}
 
       {/* Footer: language + stars + forks + links */}
-      <div className="flex items-center justify-between pt-1">
-        <div className="flex items-center gap-3 text-xs text-text-secondary">
+      <div className="flex items-center justify-between pt-2 border-t border-white/6">
+        <div className="flex items-center gap-3 text-xs text-white/50">
           {langColor && (
             <span className="flex items-center gap-1.5">
               <span
-                className="w-2.5 h-2.5 rounded-full shrink-0"
+                className="w-2 h-2 rounded-full shrink-0"
                 style={{ backgroundColor: langColor }}
               />
               {language}
@@ -105,7 +104,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
           )}
           {stars > 0 && (
             <span className="flex items-center gap-1">
-              <Star size={12} />
+              <Star size={12} className="text-[#FFA043]" />
               {stars}
             </span>
           )}
@@ -122,7 +121,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             href={projectUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 px-2 py-1 rounded text-xs text-text-secondary hover:text-white hover:bg-white/8 transition-all"
+            className="flex items-center gap-1 px-2 py-1 rounded text-xs text-white/60 hover:text-white hover:bg-white/8 transition-all"
             title="View on GitHub"
           >
             <svg viewBox="0 0 16 16" className="w-3.5 h-3.5 fill-current" aria-hidden="true">
@@ -134,7 +133,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
               href={homepage}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 px-2 py-1 rounded text-xs text-text-secondary hover:text-white hover:bg-white/8 transition-all"
+              className="flex items-center gap-1 px-2 py-1 rounded text-xs text-[#FFA043] hover:text-white hover:bg-[#FF6B00]/20 transition-all"
               title="Live Site"
             >
               <ExternalLink size={12} />

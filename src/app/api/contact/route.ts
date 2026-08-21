@@ -43,21 +43,21 @@ export async function POST(req: Request) {
         reply_to: email,
         subject: `[iamdevkd.com] New message from ${name}`,
         html: `
-          <div style="font-family: 'Inter', sans-serif; max-width: 600px; margin: 0 auto; background: #0D0D0D; color: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+          <div style="font-family: 'Poppins', sans-serif; max-width: 600px; margin: 0 auto; background: #080808; color: #ffffff; padding: 40px; border-radius: 12px; border: 1px solid rgba(255,107,0,0.2);">
             <div style="margin-bottom: 32px;">
-              <h1 style="font-size: 24px; font-weight: 700; margin: 0 0 8px; color: #00FF85;">New Portfolio Message</h1>
-              <p style="font-size: 14px; color: #A0A0A0; margin: 0;">Received via <strong>iamdevkd.com</strong></p>
+              <h1 style="font-size: 24px; font-weight: 700; margin: 0 0 8px; color: #FF6B00;">New Portfolio Message</h1>
+              <p style="font-size: 14px; color: #9E9E9E; margin: 0;">Received via <strong>iamdevkd.com</strong></p>
             </div>
-            <div style="background: #1A1A1A; border-radius: 8px; padding: 24px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.08);">
-              <p style="margin: 0 0 8px; font-size: 12px; color: #A0A0A0; text-transform: uppercase; letter-spacing: 0.1em;">From</p>
+            <div style="background: #141414; border-radius: 8px; padding: 24px; margin-bottom: 24px; border: 1px solid rgba(255,255,255,0.08);">
+              <p style="margin: 0 0 8px; font-size: 12px; color: #FFA043; text-transform: uppercase; letter-spacing: 0.1em; font-family: monospace;">From</p>
               <p style="margin: 0; font-size: 18px; font-weight: 600; color: #ffffff;">${name}</p>
-              <a href="mailto:${email}" style="color: #00FF85; font-size: 14px; text-decoration: none;">${email}</a>
+              <a href="mailto:${email}" style="color: #FF6B00; font-size: 14px; text-decoration: none;">${email}</a>
             </div>
-            <div style="background: #1A1A1A; border-radius: 8px; padding: 24px; border: 1px solid rgba(255,255,255,0.08);">
-              <p style="margin: 0 0 12px; font-size: 12px; color: #A0A0A0; text-transform: uppercase; letter-spacing: 0.1em;">Message</p>
+            <div style="background: #141414; border-radius: 8px; padding: 24px; border: 1px solid rgba(255,255,255,0.08);">
+              <p style="margin: 0 0 12px; font-size: 12px; color: #FFA043; text-transform: uppercase; letter-spacing: 0.1em; font-family: monospace;">Message</p>
               <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #E0E0E0; white-space: pre-wrap;">${message}</p>
             </div>
-            <p style="margin: 32px 0 0; font-size: 12px; color: #444; text-align: center;">Reply directly to this email to respond to ${name}</p>
+            <p style="margin: 32px 0 0; font-size: 12px; color: #555; text-align: center;">Reply directly to this email to respond to ${name}</p>
           </div>
         `,
       }),
