@@ -11,7 +11,7 @@ Beyond full-stack work, I have hands-on experience in game development using Unr
 - **Senior High School (Science)** (2018 – 2023) — Achimota School, Ghana
 - **Software Intern (On-site)** — IT Consortium (Fintech & Software Solutions, Ghana)
 - **Remote Consultant** — Dreamport / Trevolution Group
-- **3x National Hackathon Participant & Winner** — 1st Place at BridgeLabs Ghana AI Hackathon 2025, 2x Finalist in Zindi & Yango Hackathons 2024.
+- **3x National Hackathon Participant & Award Winner** — One of 6 award winners at BridgeLabs Ghana AI Hackathon 2025, 2x Finalist in Zindi & Yango Hackathons 2024.
 
 Based in Accra, Ghana. If you have a project in mind, an engineering role, or want to collaborate on something ambitious, reach out.
 

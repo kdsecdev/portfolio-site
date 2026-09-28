@@ -11,8 +11,8 @@ export const Terminal = () => {
           <div className="w-2.5 h-2.5 rounded-full bg-[#FFA043]" />
           <div className="w-2.5 h-2.5 rounded-full bg-[#333333]" />
         </div>
-        <div className="font-lcd text-[11px] text-[#FFA043]/80 tracking-wider">
-          DEV_KD_TERMINAL // v2.4.0
+        <div className="text-white/25 text-[11px] tracking-wide font-mono">
+          caleb@devkd:~
         </div>
       </div>
 
@@ -29,7 +29,7 @@ export const Terminal = () => {
             <span className="text-[#FF8533]">&quot;education&quot;</span>: <span className="text-[#FFA043]">&quot;BSc IT @ Central University (L300)&quot;</span>,
           </p>
           <p className="pl-4">
-            <span className="text-[#FF8533]">&quot;hackathons&quot;</span>: <span className="text-[#FFA043]">&quot;BridgeLabs AI Winner (2025)&quot;</span>,
+            <span className="text-[#FF8533]">&quot;hackathons&quot;</span>: <span className="text-[#FFA043]">&quot;BridgeLabs AI — Top 6 Winners (2025)&quot;</span>,
           </p>
           <p className="pl-4">
             <span className="text-[#FF8533]">&quot;stack&quot;</span>: [<span className="text-white/90">&quot;Flutter&quot;</span>, <span className="text-white/90">&quot;FastAPI&quot;</span>, <span className="text-white/90">&quot;React&quot;</span>, <span className="text-white/90">&quot;Python&quot;</span>, <span className="text-white/90">&quot;Java&quot;</span>],

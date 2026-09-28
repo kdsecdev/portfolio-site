@@ -56,7 +56,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
             {/* Clean credentials footer */}
             <div className="pt-5 mt-2 border-t border-white/8 flex flex-wrap items-center justify-between gap-4">
               <p className="text-xs text-white/40 font-sans leading-relaxed">
-                BSc IT · Central University (L300) &nbsp;·&nbsp; Software Intern @ IT Consortium &nbsp;·&nbsp; 3× Hackathon Winner
+                BSc IT · Central University (L300) &nbsp;·&nbsp; Software Intern @ IT Consortium &nbsp;·&nbsp; BridgeLabs AI Award Winner (2025)
               </p>
 
               <a

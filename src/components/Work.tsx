@@ -19,9 +19,9 @@ const featuredProjects = [
     id: 1,
     name: "Accra Transit Optimizer",
     category: "AI · Transport",
-    badge: "1st Place — BridgeLabs 2025",
+    badge: "BridgeLabs Award Winner 2025",
     description:
-      "AI-powered public transport route optimizer for Accra. Built with FastAPI, GTFS data feeds, real-time GPS tracking, and a Flutter mobile client.",
+      "AI-powered public transport route optimizer for Accra. Built with FastAPI, GTFS data feeds, real-time GPS tracking, and a Flutter mobile client. Recognised as one of 6 award winners at BridgeLabs Ghana AI Hackathon.",
     topics: ["FastAPI", "Flutter", "Python", "GTFS"],
     html_url: "https://github.com/kdsecdev",
     liveUrl: null,

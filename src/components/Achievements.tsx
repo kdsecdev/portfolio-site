@@ -9,10 +9,10 @@ const achievements = [
   {
     icon: Trophy,
     year: "2025",
-    type: "Hackathon",
+    type: "Award Winner",
     title: "BridgeLabs Ghana AI Hackathon",
     role: "Lead Full-Stack Developer",
-    desc: "Designed an AI-powered public transport route optimizer using FastAPI and GTFS data feeds, integrated with a Flutter client for real-time GPS and analytics.",
+    desc: "Designed an AI-powered public transport route optimizer using FastAPI and GTFS data feeds, integrated with a Flutter client for real-time GPS and analytics. Recognised as one of 6 award winners.",
     badges: ["FastAPI", "GTFS", "Flutter"],
     accentColor: "#FF6B00",
   },
