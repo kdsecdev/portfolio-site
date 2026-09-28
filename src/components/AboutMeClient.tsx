@@ -146,7 +146,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
                </div>
                <div>
                  <p className="font-semibold text-white">BridgeLabs Ghana AI Hackathon</p>
-                 <p className="text-white/50 text-[11px]">1st Place Winner (2025)</p>
+                 <p className="text-white/50 text-[11px]">Top 6 Award Winner (2025)</p>
                </div>
              </div>
            </div>

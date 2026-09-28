@@ -29,7 +29,7 @@ export const Terminal = () => {
             <span className="text-[#FF8533]">&quot;education&quot;</span>: <span className="text-[#FFA043]">&quot;BSc IT @ Central University (L300)&quot;</span>,
           </p>
           <p className="pl-4">
-            <span className="text-[#FF8533]">&quot;hackathons&quot;</span>: <span className="text-[#FFA043]">&quot;BridgeLabs AI — Top 6 Winners (2025)&quot;</span>,
+            <span className="text-[#FF8533]">&quot;hackathons&quot;</span>: <span className="text-[#FFA043]">&quot;BridgeLabs AI - Top 6 Winners (2025)&quot;</span>,
           </p>
           <p className="pl-4">
             <span className="text-[#FF8533]">&quot;stack&quot;</span>: [<span className="text-white/90">&quot;Flutter&quot;</span>, <span className="text-white/90">&quot;FastAPI&quot;</span>, <span className="text-white/90">&quot;React&quot;</span>, <span className="text-white/90">&quot;Python&quot;</span>, <span className="text-white/90">&quot;Java&quot;</span>],
