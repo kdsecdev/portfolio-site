@@ -128,31 +128,24 @@ export const Services = () => {
                 style={{ backgroundColor: `${service.color}25` }}
               />
 
-              {/* Top row: Minimalist Vector Icon + LCD code */}
-              <div className="flex items-center justify-between">
-                <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 group-hover:scale-105"
-                  style={{
-                    backgroundColor: `${service.color}15`,
-                    borderColor: `${service.color}35`,
-                  }}
-                >
-                  <IconComponent size={22} style={{ color: service.color }} />
-                </div>
-                <span className="font-lcd text-xs text-[#FFA043] font-bold tracking-wider">
-                  [{service.code}]
-                </span>
+              {/* Icon */}
+              <div
+                className="w-11 h-11 rounded-xl flex items-center justify-center border transition-all duration-300 group-hover:scale-105"
+                style={{
+                  backgroundColor: `${service.color}12`,
+                  borderColor: `${service.color}28`,
+                }}
+              >
+                <IconComponent size={20} style={{ color: service.color }} />
               </div>
 
               {/* Content */}
               <div className="flex-1">
-                <p className="font-lcd text-[11px] uppercase tracking-wider mb-1" style={{ color: service.color }}>
-                  {service.tagline}
-                </p>
-                <h3 className="text-xl font-bold font-display text-white mb-2 group-hover:text-[#FFA043] transition-colors">
+                <p className="text-[11px] text-white/40 mb-1.5 font-sans">{service.tagline}</p>
+                <h3 className="text-base font-bold font-display text-white mb-2 group-hover:text-[#FFA043] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed font-sans">{service.description}</p>
+                <p className="text-white/55 text-sm leading-relaxed font-sans">{service.description}</p>
               </div>
 
               {/* Skills */}
@@ -160,7 +153,7 @@ export const Services = () => {
                 {service.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2.5 py-0.5 text-xs rounded-full bg-white/5 border border-white/8 text-white/60 font-mono"
+                    className="px-2 py-0.5 text-[11px] rounded-md bg-white/4 border border-white/8 text-white/45 font-sans"
                   >
                     {skill}
                   </span>

@@ -53,36 +53,21 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
               </ReactMarkdown>
             </div>
 
-            {/* Stylistic LCD Stats Row */}
-            <div className="pt-6 mt-4 border-t border-white/8 flex flex-wrap items-center justify-between gap-3">
-              <div className="flex flex-wrap gap-2">
-                <span className="lcd-tag">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
-                  EDU: CENTRAL UNIV (L300)
-                </span>
-                <span className="lcd-tag">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF8800]" />
-                  HACKATHONS: 3X (1ST PLACE)
-                </span>
-                <span className="lcd-tag">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FFA043]" />
-                  EXP: IT CONSORTIUM
-                </span>
-                <span className="lcd-tag">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
-                  REPOS: 20+ PUBLIC
-                </span>
-              </div>
+            {/* Clean credentials footer */}
+            <div className="pt-5 mt-2 border-t border-white/8 flex flex-wrap items-center justify-between gap-4">
+              <p className="text-xs text-white/40 font-sans leading-relaxed">
+                BSc IT · Central University (L300) &nbsp;·&nbsp; Software Intern @ IT Consortium &nbsp;·&nbsp; 3× Hackathon Winner
+              </p>
 
               <a
                 href="/Caleb_Botchway_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Caleb_Botchway_CV.pdf"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B00]/15 border border-[#FF6B00]/30 text-[#FFA043] hover:bg-[#FF6B00] hover:text-black transition-all text-xs font-bold shrink-0"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B00]/12 border border-[#FF6B00]/25 text-white/70 hover:bg-[#FF6B00] hover:text-black transition-all text-xs font-medium shrink-0"
               >
-                <FileDown size={14} />
-                Download CV (PDF)
+                <FileDown size={13} />
+                Download CV
               </a>
             </div>
           </Card>
@@ -120,21 +105,13 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
               </div>
 
               {/* Bottom info bar */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black via-black/80 to-transparent border-t border-white/6">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#FF6B00] animate-pulse shadow-[0_0_6px_#FF6B00]" />
-                    <span className="font-lcd text-xs text-[#FFA043] uppercase tracking-wider">
-                      FULL-STACK · GH 🇬🇭
-                    </span>
-                  </div>
-                  <span className="font-lcd text-[10px] text-white/50">Central Univ L300</span>
+              <div className="absolute bottom-0 left-0 right-0 p-5 bg-gradient-to-t from-black via-black/80 to-transparent">
+                <div className="flex items-center gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#FF6B00] animate-pulse" />
+                  <span className="text-xs text-white/50 font-sans">
+                    Full-Stack Developer · Accra, Ghana
+                  </span>
                 </div>
-              </div>
-
-              {/* Corner accent */}
-              <div className="absolute top-4 right-4 px-2.5 py-1 rounded-full bg-black/60 border border-white/10 backdrop-blur-sm">
-                <span className="font-lcd text-[10px] text-[#FFA043] uppercase tracking-wider">EST. 2022</span>
               </div>
 
               {/* Glass overlay */}

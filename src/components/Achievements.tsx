@@ -7,44 +7,44 @@ import { Trophy, Zap, Award, CheckCircle2 } from "lucide-react";
 
 const achievements = [
   {
-    code: "HACK_01",
-    tag: "1ST PLACE · 2025",
     icon: Trophy,
-    accentColor: "#FF6B00",
+    year: "2025",
+    type: "Hackathon",
     title: "BridgeLabs Ghana AI Hackathon",
     role: "Lead Full-Stack Developer",
     desc: "Designed an AI-powered public transport route optimizer using FastAPI and GTFS data feeds, integrated with a Flutter client for real-time GPS and analytics.",
-    badges: ["FastAPI", "GTFS", "Flutter", "1st Place"],
+    badges: ["FastAPI", "GTFS", "Flutter"],
+    accentColor: "#FF6B00",
   },
   {
-    code: "HACK_02",
-    tag: "2X FINALIST · 2024",
     icon: Zap,
-    accentColor: "#FFA043",
-    title: "2x Zindi & Yango Hackathons",
+    year: "2024",
+    type: "2× Finalist",
+    title: "Zindi & Yango Hackathons",
     role: "Full Stack & ML Developer",
     desc: "Mined and parsed complex spatial-temporal datasets to build a machine learning model estimating average vehicle speeds on major Accra corridors.",
-    badges: ["Python", "Machine Learning", "Spatial Data", "Zindi"],
+    badges: ["Python", "Machine Learning", "Spatial Data"],
+    accentColor: "#FFA043",
   },
   {
-    code: "CERT_01",
-    tag: "VERIFIED · 2024",
     icon: Award,
-    accentColor: "#FF8C00",
+    year: "2024",
+    type: "Certification",
     title: "ATHE Level 3 IT & Google Cert",
     role: "Systems & Version Control",
-    desc: "Earned ATHE Level 3 IT accreditation (2024) alongside Google Career Certificate in Git & Version Control Pipelines and branch architecture.",
+    desc: "Earned ATHE Level 3 IT accreditation alongside Google Career Certificate in Git & Version Control Pipelines and branch architecture.",
     badges: ["ATHE Level 3 IT", "Google Git & CI/CD"],
+    accentColor: "#FF8C00",
   },
   {
-    code: "CERT_02",
-    tag: "VERIFIED · 2025",
     icon: CheckCircle2,
-    accentColor: "#FF5500",
+    year: "2025",
+    type: "Certification",
     title: "Flutter & Java Specializations",
     role: "Mobile & OOP Engineering",
-    desc: "Completed FreeCodeCamp Flutter Development Bootcamp (2025) building cross-platform apps, and Udemy Java Software Development for robust object-oriented design.",
+    desc: "Completed FreeCodeCamp Flutter Development Bootcamp building cross-platform apps, and Udemy Java Software Development for robust object-oriented design.",
     badges: ["Flutter Bootcamp", "Udemy Java OOP"],
+    accentColor: "#FF5500",
   },
 ];
 
@@ -53,7 +53,7 @@ export const Achievements = () => {
     <SectionWrapper id="achievements">
       <div className="text-center mb-10 sm:mb-14">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mb-3">
-          Hackathons &amp; Wins
+          Hackathons & Wins
         </h2>
         <p className="text-white/60 max-w-lg mx-auto text-base sm:text-lg font-sans">
           Competitive hackathons, verified engineering certs, and systems that shipped.
@@ -63,52 +63,51 @@ export const Achievements = () => {
       <motion.div
         variants={{
           hidden: { opacity: 0 },
-          visible: { opacity: 1, transition: { staggerChildren: 0.12 } }
+          visible: { opacity: 1, transition: { staggerChildren: 0.1 } }
         }}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6"
       >
-        {achievements.map((achievement, index) => {
-          const IconComp = achievement.icon;
+        {achievements.map((item, index) => {
+          const IconComp = item.icon;
           return (
             <Card
               key={index}
-              className="p-6 flex flex-col gap-4 bg-[#111111]/90 border border-white/10 hover:border-[#FF6B00]/40 transition-all duration-300 shadow-xl hover:shadow-[0_0_20px_rgba(255,107,0,0.15)] h-full"
+              className="p-6 flex flex-col gap-4 bg-[#111111]/90 border border-white/8 hover:border-white/20 transition-all duration-200 shadow-xl h-full"
             >
-              {/* Top row with clean vector icon & LCD badge */}
-              <div className="flex items-center justify-between">
+              {/* Icon + year/type row */}
+              <div className="flex items-start justify-between">
                 <div
-                  className="p-3 w-fit rounded-xl border"
+                  className="p-2.5 w-fit rounded-xl border"
                   style={{
-                    backgroundColor: `${achievement.accentColor}15`,
-                    borderColor: `${achievement.accentColor}35`,
+                    backgroundColor: `${item.accentColor}12`,
+                    borderColor: `${item.accentColor}28`,
                   }}
                 >
-                  <IconComp size={22} style={{ color: achievement.accentColor }} />
+                  <IconComp size={20} style={{ color: item.accentColor }} />
                 </div>
-                <span className="font-lcd text-[11px] px-2.5 py-1 rounded bg-[#FF6B00]/10 border border-[#FF6B00]/25 text-[#FFA043] font-bold">
-                  {achievement.tag}
-                </span>
+                <div className="text-right">
+                  <p className="text-[11px] text-white/35 font-sans">{item.type}</p>
+                  <p className="text-[11px] font-semibold text-white/50 font-sans">{item.year}</p>
+                </div>
               </div>
 
               <div className="flex-1">
-                <h3 className="text-lg font-bold font-display text-white mb-1.5">{achievement.title}</h3>
-                <p className="font-lcd text-xs tracking-wide mb-2" style={{ color: achievement.accentColor }}>
-                  ROLE: {achievement.role}
-                </p>
+                <h3 className="text-base font-bold font-display text-white mb-1 leading-snug">{item.title}</h3>
+                <p className="text-[11px] text-white/40 mb-3 font-sans">{item.role}</p>
                 <p className="text-white/60 text-sm leading-relaxed font-sans">
-                  {achievement.desc}
+                  {item.desc}
                 </p>
               </div>
 
-              {/* Badges */}
+              {/* Clean tech chips */}
               <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/6 mt-auto">
-                {achievement.badges.map((badge) => (
+                {item.badges.map((badge) => (
                   <span
                     key={badge}
-                    className="px-2 py-0.5 text-xs rounded-full bg-white/5 border border-white/8 text-white/60 font-mono"
+                    className="px-2 py-0.5 text-[11px] rounded-md bg-white/4 border border-white/8 text-white/45 font-sans"
                   >
                     {badge}
                   </span>
