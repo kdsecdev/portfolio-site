@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# private documents — do not commit to git
+# deploy the CV via CI/CD or upload directly to hosting
+public/Caleb_Botchway_CV.pdf
+public/*.pdf

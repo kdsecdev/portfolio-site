@@ -165,8 +165,7 @@ body::before {
   animation: hero-pulse-c 7s ease-in-out infinite 2s;
 }
 
-/* Performance: defer rendering of off-screen content */
-section:not(:first-child) {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 600px;
+/* Smooth will-change hint for animated sections */
+section {
+  will-change: auto;
 }

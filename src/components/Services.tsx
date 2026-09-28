@@ -2,67 +2,67 @@
 
 import { motion } from "framer-motion";
 import { SectionWrapper } from "./SectionWrapper";
-import { ArrowRight, Layout, Code2, Server, Smartphone, ShieldCheck, Cpu } from "lucide-react";
+import { ArrowRight, Code2, Server, Smartphone, ShieldCheck, Cpu, Gamepad2 } from "lucide-react";
 
 const services = [
   {
     code: "SVC_01",
-    icon: Layout,
-    title: "UI / UX Design",
-    tagline: "High-conversion modern interfaces",
+    icon: Code2,
+    title: "Full-Stack Development",
+    tagline: "Modern web applications",
     description:
-      "From wireframes to fully polished, responsive interfaces. I design with clarity and intent — every pixel has a purpose.",
-    skills: ["Figma", "Next.js", "Tailwind CSS", "Framer Motion"],
+      "End-to-end web applications built with React and Next.js on the frontend, paired with robust backend services and structured relational databases.",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     color: "#FF6B00",
   },
   {
     code: "SVC_02",
-    icon: Code2,
-    title: "Full-Stack Development",
-    tagline: "End-to-end web applications",
+    icon: Smartphone,
+    title: "Mobile App Development",
+    tagline: "Cross-platform iOS & Android",
     description:
-      "I build robust, scalable full-stack applications — from seamless React/Next.js frontends to high-performance APIs and databases.",
-    skills: ["React", "Next.js", "TypeScript", "PostgreSQL"],
+      "Native-speed mobile apps using Flutter and Dart. Real-time Firebase backends, dynamic state management, and smooth responsive UIs.",
+    skills: ["Flutter", "Dart", "Firebase", "REST APIs"],
     color: "#FFA043",
   },
   {
     code: "SVC_03",
     icon: Server,
     title: "Backend & API Engineering",
-    tagline: "Fast, secure, and scalable APIs",
+    tagline: "Fast, resilient architecture",
     description:
-      "RESTful and GraphQL APIs, microservices, authentication systems, and database design built for production scale.",
-    skills: ["FastAPI", "Node.js", "Docker", "PostgreSQL"],
+      "RESTful APIs, microservices, and database design built for production. Scalable services in FastAPI and Node.js connected to MySQL and PostgreSQL.",
+    skills: ["FastAPI", "Python", "MySQL", "PostgreSQL"],
     color: "#FF7A00",
   },
   {
     code: "SVC_04",
-    icon: Smartphone,
-    title: "Mobile Development",
-    tagline: "Cross-platform apps with Flutter",
+    icon: Cpu,
+    title: "AI & Transit Analytics",
+    tagline: "Predictive models & GTFS data",
     description:
-      "Native-quality mobile experiences for iOS and Android using Flutter & Dart. Fast, beautiful, and reliable.",
-    skills: ["Flutter", "Dart", "Firebase", "REST APIs"],
+      "Public transit route optimization, machine learning models estimating corridor travel speeds, and automated AI agents via modern protocols.",
+    skills: ["Python", "GTFS Feeds", "Machine Learning", "FastAPI"],
     color: "#FF8C00",
   },
   {
     code: "SVC_05",
     icon: ShieldCheck,
-    title: "Secure Systems",
-    tagline: "Security-first development",
+    title: "Systems & Security Tooling",
+    tagline: "Memory forensics & low-level code",
     description:
-      "Authentication flows, secure API design, code auditing, and memory forensic tooling to safeguard your stack.",
-    skills: ["C++", "Python", "Volatility3", "MCP"],
+      "Rootkit detection tooling, physical memory triangulation using Volatility 3, custom MCP bridges, and low-level C++ systems programming.",
+    skills: ["C++", "Python", "Volatility 3", "MCP"],
     color: "#FF5500",
   },
   {
     code: "SVC_06",
-    icon: Cpu,
-    title: "AI / ML Integration",
-    tagline: "Smart features, real-world impact",
+    icon: Gamepad2,
+    title: "Game Dev & Interactive 3D",
+    tagline: "Real-time engines & mechanics",
     description:
-      "Integrating machine learning models and AI agents into production applications — from natural language to forensic intelligence.",
-    skills: ["Python", "FastAPI", "Agents", "OpenAI API"],
+      "Interactive 2D and 3D environment development in Unreal Engine and Godot. Game logic, physics, QA mechanics analysis, and crash diagnostics.",
+    skills: ["Unreal Engine", "Godot", "C++", "QA Analysis"],
     color: "#FFA043",
   },
 ];
@@ -85,9 +85,6 @@ export const Services = () => {
     <SectionWrapper id="services">
       {/* Header */}
       <div className="text-center mb-10 sm:mb-16">
-        <p className="font-lcd text-xs text-[#FFA043] tracking-widest uppercase mb-3">
-          // SECTION: 03 // CAPABILITIES &amp; OFFERINGS
-        </p>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -95,7 +92,7 @@ export const Services = () => {
           transition={{ delay: 0.1 }}
           className="text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mb-4"
         >
-          Services &amp; Expertise
+          Services
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -104,7 +101,7 @@ export const Services = () => {
           transition={{ delay: 0.2 }}
           className="text-white/60 text-base sm:text-lg max-w-xl mx-auto font-sans"
         >
-          From pixel-perfect web experiences to fortified backend systems — I deliver complete digital solutions.
+          Web, mobile, backend, and security work. Here&#39;s what I build.
         </motion.p>
       </div>
 
@@ -185,17 +182,14 @@ export const Services = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B00]/10 via-transparent to-[#FFA043]/10 pointer-events-none" />
         <div className="absolute inset-0 bg-white/[0.01] pointer-events-none" />
 
-        <p className="font-lcd text-xs text-[#FFA043] uppercase tracking-widest mb-3">
-          // INITIATE_PROJECT // GET_QUOTE
-        </p>
         <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold font-display text-white mb-4 tracking-tight">
-          Let&apos;s build something{" "}
+          Got a project in mind?{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-[#FFA726]">
-            extraordinary.
+            Let&#39;s build it.
           </span>
         </h3>
         <p className="text-white/60 mb-8 max-w-md mx-auto font-sans">
-          Have a project in mind? I&apos;d love to discuss requirements, architecture, and timelines for your product.
+          I&#39;m open to contract work, full-time roles, and interesting collaborations. Reach out and we&#39;ll figure out the details.
         </p>
         <a
           href="#contact"

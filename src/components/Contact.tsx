@@ -4,13 +4,24 @@ import { AnimatedInput } from "./AnimatedInput";
 import { SectionWrapper } from "./SectionWrapper";
 import { Card } from "./Card";
 import { useState } from "react";
-import { Send, CheckCircle, XCircle, Mail } from "lucide-react";
+import { Send, CheckCircle, XCircle, Mail, Phone, FileDown } from "lucide-react";
 
 const quickLinks = [
   {
-    label: "Email Direct",
-    href: "mailto:devkd843@gmail.com",
+    label: "Email (cbotch5000@gmail.com)",
+    href: "mailto:cbotch5000@gmail.com",
     icon: <Mail size={17} className="text-[#FFA043]" />,
+  },
+  {
+    label: "WhatsApp / Call (+233 593 787 291)",
+    href: "https://wa.me/233593787291",
+    icon: <Phone size={17} className="text-[#FFA043]" />,
+  },
+  {
+    label: "Download Official CV (PDF)",
+    href: "/Caleb_Botchway_CV.pdf",
+    download: true,
+    icon: <FileDown size={17} className="text-[#FF6B00]" />,
   },
   {
     label: "GitHub Profile",
@@ -27,15 +38,6 @@ const quickLinks = [
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current text-[#FFA043]" aria-hidden="true">
         <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.81a1.45 1.45 0 0 0-1.45 1.45 1.45 1.45 0 0 0 1.45 1.45 1.45 1.45 0 0 0 1.45-1.45 1.45 1.45 0 0 0-1.45-1.45Z"/>
-      </svg>
-    ),
-  },
-  {
-    label: "Twitter / X",
-    href: "https://x.com/devkd999",
-    icon: (
-      <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current text-[#FFA043]" aria-hidden="true">
-        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
       </svg>
     ),
   },
@@ -89,14 +91,11 @@ export const Contact = () => {
         className="max-w-5xl mx-auto"
       >
         <div className="text-center mb-10 sm:mb-16">
-          <p className="font-lcd text-xs text-[#FFA043] tracking-widest uppercase mb-3">
-            // SECTION: 05 // TRANSMISSION &amp; INQUIRY
-          </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mb-3">
             Get In Touch
           </h2>
           <p className="text-white/60 text-base sm:text-lg max-w-md mx-auto font-sans">
-            Got a project, role, or collaboration in mind? Let&apos;s talk.
+            Got a project, role, or collab in mind? Let&#39;s talk.
           </p>
         </div>
 
@@ -119,6 +118,7 @@ export const Contact = () => {
                   href={link.href}
                   target={link.href.startsWith("mailto") ? undefined : "_blank"}
                   rel="noopener noreferrer"
+                  download={"download" in link && link.download ? "Caleb_Botchway_CV.pdf" : undefined}
                   className="flex items-center gap-3.5 p-3.5 rounded-xl bg-[#121212] border border-white/10 text-white/70 hover:text-white hover:border-[#FF6B00]/50 hover:bg-[#FF6B00]/8 transition-all group shadow-md"
                 >
                   <span className="w-8 h-8 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center group-hover:border-[#FF6B00]/40 group-hover:bg-[#FF6B00]/10 transition-colors">
@@ -134,17 +134,17 @@ export const Contact = () => {
               <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-[#FF6B00] animate-pulse shadow-[0_0_6px_#FF6B00]" />
-                  <span className="font-lcd text-xs text-[#FFA043] uppercase tracking-widest">
-                    SYSTEM STATUS
+                  <span className="text-xs text-white/70 uppercase tracking-widest font-sans">
+                    Status
                   </span>
                 </div>
-                <span className="font-lcd text-[10px] text-white/40">GH_ACCRA</span>
+                <span className="font-lcd text-[10px] text-white/40">Accra, GH</span>
               </div>
               <p className="text-white font-semibold text-sm font-sans">
-                Available for Q1/Q2 Projects
+                Open to new projects
               </p>
-              <p className="font-lcd text-xs text-[#FFA043]/80 mt-1">
-                AVG_RESPONSE: &lt; 24 HOURS
+              <p className="text-xs text-white/50 mt-1 font-sans">
+                Typically responds within 24 hours
               </p>
             </div>
           </div>
@@ -159,10 +159,10 @@ export const Contact = () => {
               >
                 <CheckCircle size={48} className="text-[#FF6B00]" />
                 <h3 className="text-2xl font-bold font-display text-white">
-                  Message Dispatched!
+                  Message sent!
                 </h3>
                 <p className="text-white/60 max-w-xs font-sans text-sm">
-                  Thanks for reaching out. I&apos;ll review your message and reply within 24 hours.
+                  Thanks for reaching out. I&#39;ll get back to you within 24 hours.
                 </p>
                 <button
                   onClick={() => setSuccess(false)}
@@ -235,7 +235,7 @@ export const Contact = () => {
                           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
                         />
                       </svg>
-                      Transmitting...
+                      Sending...
                     </>
                   ) : (
                     <>

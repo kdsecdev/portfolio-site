@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, type Variants } from "framer-motion";
-import { X, User, Briefcase, Contact, Wrench, Trophy, Heart } from "lucide-react";
+import { X, User, Briefcase, Contact, Wrench, Trophy, Heart, FileDown } from "lucide-react";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -209,6 +209,18 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
                   </p>
                 </div>
               </div>
+
+              {/* Download CV */}
+              <a
+                href="/Caleb_Botchway_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Caleb_Botchway_CV.pdf"
+                className="flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-[#FF6B00]/15 border border-[#FF6B00]/30 hover:bg-[#FF6B00] hover:text-black active:scale-[0.98] transition-all text-sm text-[#FFA043] font-bold"
+              >
+                <FileDown size={15} />
+                <span>Download CV (PDF)</span>
+              </a>
 
               {/* Support */}
               <a

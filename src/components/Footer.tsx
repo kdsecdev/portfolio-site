@@ -43,7 +43,7 @@ const socialLinks = [
   },
   {
     label: "Email Direct",
-    href: "mailto:devkd843@gmail.com",
+    href: "mailto:cbotch5000@gmail.com",
     icon: <Mail size={16} />,
   },
 ];
@@ -54,6 +54,7 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Achievements", href: "#achievements" },
   { label: "Contact", href: "#contact" },
+  { label: "Download CV (PDF)", href: "/Caleb_Botchway_CV.pdf" },
 ];
 
 export const Footer = () => {
@@ -62,13 +63,10 @@ export const Footer = () => {
       {/* Top CTA Banner */}
       <div className="border-b border-white/8 py-12 sm:py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <p className="font-lcd text-xs text-[#FFA043] tracking-widest uppercase mb-4">
-            // STATUS: OPEN_TO_COLLABORATIONS
-          </p>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-5 sm:mb-6 tracking-tight text-white">
             Ready to build something{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B00] via-[#FF8800] to-[#FFA726]">
-              exceptional?
+              together?
             </span>
           </h2>
           <p className="text-white/60 mb-8 sm:mb-10 text-base sm:text-lg max-w-xl mx-auto font-sans">
@@ -105,8 +103,8 @@ export const Footer = () => {
 
           {/* Nav Links */}
           <div>
-            <p className="font-lcd text-xs text-[#FFA043] uppercase tracking-widest mb-4">
-              // NAVIGATION
+            <p className="text-xs text-white/50 uppercase tracking-widest mb-4 font-sans">
+              Navigation
             </p>
             <ul className="space-y-2.5">
               {navLinks.map((link) => (
@@ -124,8 +122,8 @@ export const Footer = () => {
 
           {/* Socials */}
           <div>
-            <p className="font-lcd text-xs text-[#FFA043] uppercase tracking-widest mb-4">
-              // CONNECT
+            <p className="text-xs text-white/50 uppercase tracking-widest mb-4 font-sans">
+              Connect
             </p>
             <ul className="space-y-2.5">
               {socialLinks.map((link) => (
@@ -166,8 +164,8 @@ export const Footer = () => {
               <Heart size={12} className="text-[#FF6B00]" />
               Support Dev KD
             </a>
-            <span className="font-lcd text-[11px] text-white/40">
-              SYS: ONLINE // STACK: NEXTJS+R3F
+            <span className="font-lcd text-[11px] text-white/30">
+              Built with Next.js
             </span>
           </div>
         </div>

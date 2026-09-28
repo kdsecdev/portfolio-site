@@ -20,32 +20,65 @@ export const featuredProjects = [
     code: "PROJ_01",
     name: "Accra Transit Optimizer",
     description:
-      "AI-powered public transport route optimizer for Accra, Ghana. Built with FastAPI, GTFS data feeds, and a Flutter mobile client. Won the BridgeLabs Ghana AI Hackathon 2025.",
+      "AI-powered public transport route optimizer for Accra, Ghana. Built with FastAPI, GTFS data feeds, real-time GPS tracking, and a Flutter mobile client. Won 1st Place at BridgeLabs Ghana AI Hackathon 2025.",
     html_url: "https://github.com/kdsecdev/accra-transit-optimizer",
-    topics: ["python", "fastapi", "flutter", "ai", "gtfs", "hackathon"],
+    topics: ["fastapi", "flutter", "python", "gtfs", "ai", "hackathon-winner"],
     featured: true,
-    badge: "🏆 Hackathon Winner · ⭐ 3",
+    badge: "🏆 1st Place Hackathon · ⭐ 3",
   },
   {
     id: "aura-forensics",
     code: "PROJ_02",
     name: "Aura Forensics",
     description:
-      "Autonomous AI forensic agent using a custom MCP bridge and Volatility 3 to detect unlinked rootkits via physical memory triangulation. Cutting-edge cybersecurity tooling.",
+      "Autonomous AI forensic agent utilizing a custom Model Context Protocol (MCP) bridge and Volatility 3 to detect unlinked rootkits via physical memory triangulation.",
     html_url: "https://github.com/kdsecdev/Aura-Forensics",
-    topics: ["python", "ai", "cybersecurity", "volatility3", "mcp", "forensics"],
+    topics: ["python", "ai", "volatility3", "mcp", "cybersecurity", "forensics"],
     featured: true,
-    badge: "🔐 Security Tool",
+    badge: "🔐 Memory Forensics Tool",
+  },
+  {
+    id: "trotro-live",
+    code: "PROJ_03",
+    name: "Trotro Live",
+    description:
+      "Public transport tracking system for Ghanaian commuters. Engineered backend microservices for route mapping, congestion estimation, and real-time vehicle speed modeling.",
+    html_url: "https://github.com/kdsecdev",
+    topics: ["python", "fastapi", "gtfs", "transit-analytics", "ghana"],
+    featured: true,
+    badge: "🚌 Public Transit AI",
+  },
+  {
+    id: "smart-asset-management",
+    code: "PROJ_04",
+    name: "Smart Asset Management System",
+    description:
+      "Enterprise desktop application developed in JavaFX and MySQL to track university assets. Features role-based access control, maintenance history tracking, and audit logging.",
+    html_url: "https://github.com/kdsecdev/javaassetregistry",
+    topics: ["java", "javafx", "mysql", "oop", "database-design"],
+    featured: true,
+    badge: "💻 Desktop Application",
+  },
+  {
+    id: "food-delivery-app",
+    code: "PROJ_05",
+    name: "Food Delivery App",
+    description:
+      "Responsive cross-platform food delivery mobile application built with Flutter and Dart, integrated with a Firebase backend for real-time order tracking and user authentication.",
+    html_url: "https://github.com/kdsecdev/fooddeliveryapp",
+    topics: ["flutter", "dart", "firebase", "mobile", "ios-android"],
+    featured: true,
+    badge: "📱 Flutter Mobile App",
   },
   {
     id: "cineguide",
-    code: "PROJ_03",
+    code: "PROJ_06",
     name: "CineGuide",
     description:
-      "A sleek movie discovery app built with React. Browse, search, and explore films with a clean and responsive UI. Live on Vercel.",
+      "A sleek, responsive movie discovery and exploration application built with React and modern CSS. Live on Vercel with smooth search, filter, and detail views.",
     html_url: "https://github.com/kdsecdev/cineguide",
     liveUrl: "https://cineguide-six.vercel.app",
-    topics: ["react", "css", "javascript", "vercel"],
+    topics: ["react", "javascript", "css", "vercel", "responsive"],
     featured: true,
     badge: "🚀 Live Demo",
   },
@@ -83,14 +116,11 @@ export const Work = async () => {
     <SectionWrapper id="work">
       {/* Section Header */}
       <div className="text-center mb-10 sm:mb-14">
-        <p className="font-lcd text-xs text-[#FFA043] tracking-widest uppercase mb-3">
-          // SECTION: 02 // CODE &amp; REPOSITORIES
-        </p>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white mb-3 sm:mb-4">
           Featured Projects
         </h2>
         <p className="text-white/60 max-w-xl mx-auto text-base sm:text-lg">
-          A selection of projects I&apos;m proud of — from hackathon winners to security tools.
+          A selection of projects I&#39;m proud of.
         </p>
       </div>
 
@@ -110,7 +140,7 @@ export const Work = async () => {
           </div>
           <div>
             <p className="font-bold text-white text-sm group-hover:text-[#FFA043] transition-colors">github.com/kdsecdev</p>
-            <p className="font-lcd text-xs text-[#FF6B00] mt-0.5 tracking-wider">STATUS: ACTIVE COMMITS</p>
+            <p className="text-xs text-white/50 mt-0.5 font-sans">Active commits</p>
           </div>
         </div>
 
@@ -136,7 +166,7 @@ export const Work = async () => {
         <div className="flex items-center gap-3 mb-8">
           <div className="h-px flex-1 bg-white/10" />
           <span className="font-lcd text-xs text-[#FFA043] uppercase tracking-widest px-4">
-            // HIGHLIGHTS
+            Highlights
           </span>
           <div className="h-px flex-1 bg-white/10" />
         </div>
@@ -214,7 +244,7 @@ export const Work = async () => {
           <div className="flex items-center gap-3 mb-8">
             <div className="h-px flex-1 bg-white/10" />
             <span className="font-lcd text-xs text-[#FFA043] uppercase tracking-widest px-4">
-              // RECENT_PUSHES
+              Recent
             </span>
             <div className="h-px flex-1 bg-white/10" />
           </div>

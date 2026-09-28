@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { Card } from "./Card";
 import { TechStack } from "./TechStack";
+import { FileDown, GraduationCap, Briefcase, Award } from "lucide-react";
 
 interface AboutMeClientProps {
   content: string;
@@ -18,11 +19,8 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
         }}
         className="text-center mb-10 sm:mb-16"
       >
-        <p className="font-lcd text-xs text-[#FFA043] tracking-widest uppercase mb-3">
-          // SECTION: 01 // ORIGIN &amp; STACK
-        </p>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight text-white">
-          The Code &amp; The Vision
+          About Me
         </h2>
       </motion.div>
 
@@ -56,25 +54,42 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
             </div>
 
             {/* Stylistic LCD Stats Row */}
-            <div className="pt-6 mt-4 border-t border-white/8 flex flex-wrap gap-2.5">
-              <span className="lcd-tag">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
-                EXP: 4+ YEARS
-              </span>
-              <span className="lcd-tag">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FF8800]" />
-                REPOS: 20+ PUBLIC
-              </span>
-              <span className="lcd-tag">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#FFA043]" />
-                FOCUS: AI &amp; SYSTEMS
-              </span>
+            <div className="pt-6 mt-4 border-t border-white/8 flex flex-wrap items-center justify-between gap-3">
+              <div className="flex flex-wrap gap-2">
+                <span className="lcd-tag">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
+                  EDU: CENTRAL UNIV (L300)
+                </span>
+                <span className="lcd-tag">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF8800]" />
+                  HACKATHONS: 3X (1ST PLACE)
+                </span>
+                <span className="lcd-tag">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FFA043]" />
+                  EXP: IT CONSORTIUM
+                </span>
+                <span className="lcd-tag">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B00]" />
+                  REPOS: 20+ PUBLIC
+                </span>
+              </div>
+
+              <a
+                href="/Caleb_Botchway_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                download="Caleb_Botchway_CV.pdf"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B00]/15 border border-[#FF6B00]/30 text-[#FFA043] hover:bg-[#FF6B00] hover:text-black transition-all text-xs font-bold shrink-0"
+              >
+                <FileDown size={14} />
+                Download CV (PDF)
+              </a>
             </div>
           </Card>
         </div>
 
         {/* Profile Visual Column */}
-        <div className="lg:col-span-5 w-full">
+        <div className="lg:col-span-5 w-full space-y-4">
            <motion.div 
              initial={{ opacity: 0, scale: 0.95 }}
              whileInView={{ opacity: 1, scale: 1 }}
@@ -100,7 +115,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
                 </div>
                 <div className="text-center">
                   <p className="font-display font-bold text-white text-lg">Caleb Botchway</p>
-                  <p className="font-lcd text-xs text-[#FFA043] mt-1 tracking-wider">@iamdevkd // DEV_ID: 999</p>
+                  <p className="font-lcd text-xs text-[#FFA043] mt-1 tracking-wider">@iamdevkd</p>
                 </div>
               </div>
 
@@ -113,7 +128,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
                       FULL-STACK · GH 🇬🇭
                     </span>
                   </div>
-                  <span className="font-lcd text-[10px] text-white/50">SYS_VER: 2.4</span>
+                  <span className="font-lcd text-[10px] text-white/50">Central Univ L300</span>
                 </div>
               </div>
 
@@ -125,6 +140,39 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
               {/* Glass overlay */}
               <div className="absolute inset-0 bg-gradient-to-br from-white/3 to-transparent pointer-events-none group-hover:from-white/6 transition-all duration-500" />
            </motion.div>
+
+           {/* Quick Credentials Card */}
+           <div className="p-4 sm:p-5 rounded-2xl bg-[#111111]/90 border border-white/10 space-y-3 shadow-lg">
+             <div className="flex items-center gap-3 text-xs text-white/80">
+               <div className="w-8 h-8 rounded-lg bg-[#FF6B00]/10 border border-[#FF6B00]/30 flex items-center justify-center shrink-0 text-[#FFA043]">
+                 <GraduationCap size={16} />
+               </div>
+               <div>
+                 <p className="font-semibold text-white">Central University</p>
+                 <p className="text-white/50 text-[11px]">BSc IT · Level 300 (Expected 2027)</p>
+               </div>
+             </div>
+
+             <div className="flex items-center gap-3 text-xs text-white/80">
+               <div className="w-8 h-8 rounded-lg bg-[#FF8800]/10 border border-[#FF8800]/30 flex items-center justify-center shrink-0 text-[#FFA043]">
+                 <Briefcase size={16} />
+               </div>
+               <div>
+                 <p className="font-semibold text-white">IT Consortium</p>
+                 <p className="text-white/50 text-[11px]">Software Intern (On-site)</p>
+               </div>
+             </div>
+
+             <div className="flex items-center gap-3 text-xs text-white/80">
+               <div className="w-8 h-8 rounded-lg bg-[#FFA043]/10 border border-[#FFA043]/30 flex items-center justify-center shrink-0 text-[#FFA043]">
+                 <Award size={16} />
+               </div>
+               <div>
+                 <p className="font-semibold text-white">BridgeLabs Ghana AI Hackathon</p>
+                 <p className="text-white/50 text-[11px]">1st Place Winner (2025)</p>
+               </div>
+             </div>
+           </div>
         </div>
       </div>
       
@@ -132,11 +180,8 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
       <div className="w-full mt-16 sm:mt-20">
         <div className="text-center mb-8">
           <h3 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
-            Core Technologies &amp; Tools
+            Stack
           </h3>
-          <p className="font-lcd text-xs text-[#FFA043] mt-1 tracking-widest uppercase">
-            // LANGUAGES // FRAMEWORKS // INFRASTRUCTURE
-          </p>
         </div>
         <TechStack />
       </div>

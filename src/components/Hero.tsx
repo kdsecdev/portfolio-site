@@ -3,13 +3,13 @@ import { motion } from "framer-motion";
 import { Terminal } from "./Terminal";
 import { SectionWrapper } from "./SectionWrapper";
 import { InteractiveHeroDecoration } from "./InteractiveHeroDecoration";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, FileDown } from "lucide-react";
 
 export const Hero = () => {
   return (
     <SectionWrapper
       id="hero"
-      className="relative flex flex-col items-center justify-center min-h-[100dvh] max-h-screen px-4 sm:px-6 overflow-hidden"
+      className="relative flex flex-col items-center justify-center min-h-[100dvh] max-h-screen overflow-hidden"
     >
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[#FF6B00]/8 rounded-full blur-[120px] -z-10 pointer-events-none" />
@@ -39,8 +39,7 @@ export const Hero = () => {
           transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           className="text-base md:text-lg text-white/60 max-w-lg mx-auto text-center leading-relaxed font-sans"
         >
-          Full-stack &amp; systems developer based in Ghana 🇬🇭 — crafting secure,
-          high-performance web, mobile, and backend systems.
+          Full-stack developer based in Ghana 🇬🇭, building secure and high-performance web, mobile, and backend systems.
         </motion.p>
 
         {/* CTAs */}
@@ -58,10 +57,21 @@ export const Hero = () => {
             View Projects
             <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
           </a>
+          {/* Download CV CTA */}
+          <a
+            href="/Caleb_Botchway_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download="Caleb_Botchway_CV.pdf"
+            className="px-6 py-3.5 rounded-full border border-white/15 text-white/85 text-sm font-medium hover:border-[#FF6B00]/40 hover:text-white hover:bg-[#FF6B00]/5 transition-all active:scale-95 flex items-center gap-2"
+          >
+            <FileDown size={15} className="text-[#FF6B00]" />
+            Download CV
+          </a>
           {/* Secondary CTA */}
           <a
             href="#services"
-            className="px-7 py-3.5 rounded-full border border-white/15 text-white/80 text-sm font-medium hover:border-[#FF6B00]/40 hover:text-white hover:bg-[#FF6B00]/5 transition-all active:scale-95"
+            className="px-6 py-3.5 rounded-full border border-white/10 text-white/70 text-sm font-medium hover:border-white/20 hover:text-white transition-all active:scale-95"
           >
             Hire Me
           </a>

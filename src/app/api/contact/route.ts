@@ -39,7 +39,7 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify({
         from: "DevKD Portfolio <onboarding@resend.dev>",
-        to: ["carlybae00@gmail.com"],
+        to: ["cbotch5000@gmail.com"],
         reply_to: email,
         subject: `[iamdevkd.com] New message from ${name}`,
         html: `
