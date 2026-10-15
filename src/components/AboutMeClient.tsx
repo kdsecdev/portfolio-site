@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { Card } from "./Card";
 import { TechStack } from "./TechStack";
-import { FileDown, GraduationCap, Briefcase, Award } from "lucide-react";
+import { GraduationCap, Briefcase, Award } from "lucide-react";
 
 interface AboutMeClientProps {
   content: string;
@@ -59,16 +59,6 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
                 BSc IT · Central University (L300) &nbsp;·&nbsp; Software Intern @ IT Consortium &nbsp;·&nbsp; BridgeLabs AI Award Winner (2025)
               </p>
 
-              <a
-                href="/Caleb_Botchway_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                download="Caleb_Botchway_CV.pdf"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FF6B00]/12 border border-[#FF6B00]/25 text-white/70 hover:bg-[#FF6B00] hover:text-black transition-all text-xs font-medium shrink-0"
-              >
-                <FileDown size={13} />
-                Download CV
-              </a>
             </div>
           </Card>
         </div>

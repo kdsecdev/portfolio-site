@@ -4,7 +4,7 @@ import { AnimatedInput } from "./AnimatedInput";
 import { SectionWrapper } from "./SectionWrapper";
 import { Card } from "./Card";
 import { useState } from "react";
-import { Send, CheckCircle, XCircle, Mail, Phone, FileDown } from "lucide-react";
+import { Send, CheckCircle, XCircle, Mail, Phone } from "lucide-react";
 
 const quickLinks = [
   {
@@ -16,12 +16,6 @@ const quickLinks = [
     label: "WhatsApp / Call (+233 593 787 291)",
     href: "https://wa.me/233593787291",
     icon: <Phone size={17} className="text-[#FFA043]" />,
-  },
-  {
-    label: "Download Official CV (PDF)",
-    href: "/Caleb_Botchway_CV.pdf",
-    download: true,
-    icon: <FileDown size={17} className="text-[#FF6B00]" />,
   },
   {
     label: "GitHub Profile",
@@ -118,7 +112,6 @@ export const Contact = () => {
                   href={link.href}
                   target={link.href.startsWith("mailto") ? undefined : "_blank"}
                   rel="noopener noreferrer"
-                  download={"download" in link && link.download ? "Caleb_Botchway_CV.pdf" : undefined}
                   className="flex items-center gap-3.5 p-3.5 rounded-xl bg-[#121212] border border-white/10 text-white/70 hover:text-white hover:border-[#FF6B00]/50 hover:bg-[#FF6B00]/8 transition-all group shadow-md"
                 >
                   <span className="w-8 h-8 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center group-hover:border-[#FF6B00]/40 group-hover:bg-[#FF6B00]/10 transition-colors">

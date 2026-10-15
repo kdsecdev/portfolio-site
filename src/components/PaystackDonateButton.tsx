@@ -43,13 +43,13 @@ export const PaystackDonateButton = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="fixed bottom-6 right-6 z-[9990] flex items-center gap-2.5 px-4 py-3 rounded-full shadow-2xl border border-[#FF6B00]/40 bg-black/90 backdrop-blur-xl text-white text-sm font-semibold group hover:border-[#FF6B00] hover:shadow-[0_0_20px_rgba(255,107,0,0.35)] transition-all"
-        aria-label="Support DevKD via Paystack"
+        className="fixed bottom-6 right-6 z-[9990] flex items-center gap-2.5 px-4 py-3 rounded-full shadow-[0_0_24px_rgba(255,107,0,0.4)] border border-[#FFA043] bg-[#FF6B00] text-black text-sm font-semibold group hover:bg-[#FF7A00] hover:shadow-[0_0_30px_rgba(255,107,0,0.55)] transition-all"
+        aria-label="If you like my work, buy me a coffee"
       >
-        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#FF6B00]/15 text-[#FF6B00] group-hover:scale-110 transition-transform">
-          <Heart size={14} fill="currentColor" />
+        <span className="flex items-center justify-center w-7 h-7 rounded-full bg-black/10 text-black group-hover:scale-110 transition-transform">
+          <Coffee size={15} />
         </span>
-        <span className="hidden sm:inline text-[#FFA043] font-medium font-sans">Support Me</span>
+        <span className="text-xs sm:text-sm font-bold font-sans whitespace-nowrap">Buy me a coffee</span>
         {/* Glow ring */}
         <span className="absolute inset-0 rounded-full ring-2 ring-[#FF6B00]/15 animate-ping pointer-events-none" />
       </motion.button>
@@ -93,7 +93,7 @@ export const PaystackDonateButton = () => {
                   </div>
                 </div>
                 <p className="text-xs text-white/60 mt-3 leading-relaxed font-sans">
-                  If my work has helped or inspired you, consider buying me a coffee. Every bit fuels open-source tooling! ☕
+                  If you like the work I&apos;m doing, buy me a coffee. Every contribution helps me keep building. ☕
                 </p>
               </div>
 

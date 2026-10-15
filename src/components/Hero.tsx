@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Terminal } from "./Terminal";
 import { SectionWrapper } from "./SectionWrapper";
 import { InteractiveHeroDecoration } from "./InteractiveHeroDecoration";
-import { ArrowRight, FileDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -56,17 +56,6 @@ export const Hero = () => {
           >
             View Projects
             <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
-          </a>
-          {/* Download CV CTA */}
-          <a
-            href="/Caleb_Botchway_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            download="Caleb_Botchway_CV.pdf"
-            className="px-6 py-3.5 rounded-full border border-white/15 text-white/85 text-sm font-medium hover:border-[#FF6B00]/40 hover:text-white hover:bg-[#FF6B00]/5 transition-all active:scale-95 flex items-center gap-2"
-          >
-            <FileDown size={15} className="text-[#FF6B00]" />
-            Download CV
           </a>
           {/* Secondary CTA */}
           <a
