@@ -54,7 +54,6 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Achievements", href: "#achievements" },
   { label: "Contact", href: "#contact" },
-  { label: "Download CV (PDF)", href: "/Caleb_Botchway_CV.pdf" },
 ];
 
 export const Footer = () => {
