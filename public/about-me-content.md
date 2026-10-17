@@ -15,4 +15,4 @@ Beyond full-stack work, I have hands-on experience in game development using Unr
 
 Based in Accra, Ghana. If you have a project in mind, an engineering role, or want to collaborate on something ambitious, reach out.
 
-Direct email: [cbotch5000@gmail.com](mailto:cbotch5000@gmail.com) | Phone: [+233 593 787 291](tel:+233593787291) | [GitHub](https://github.com/kdsecdev) | [LinkedIn](https://www.linkedin.com/in/caleb-botchway-3b5aa7265) | [Twitter / X](https://x.com/devkd999)
+Direct email: [cbotch5000@gmail.com](mailto:cbotch5000@gmail.com) | Phone: [+233 593 787 291](tel:+233593787291) | [GitHub](https://github.com/kdsecdev) | [LinkedIn](https://www.linkedin.com/in/calebbotchway/) | [Twitter / X](https://x.com/devkd999)

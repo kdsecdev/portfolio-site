@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { MobileNav } from "./MobileNav";
 
@@ -82,10 +83,8 @@ export const DynamicIslandNav = () => {
           >
             {/* Logo */}
             <Link href="/" className="shrink-0">
-              <div className="w-9 h-9 bg-white/6 rounded-full flex items-center justify-center border border-white/10 hover:border-[#FF6B00]/50 hover:bg-[#FF6B00]/10 transition-all">
-                <span className="font-display font-bold text-xs text-white tracking-wide">
-                  KD
-                </span>
+              <div className="w-9 h-9 bg-[#f6f3ee] rounded-lg flex items-center justify-center border border-white/10 hover:border-[#FF6B00]/50 transition-all overflow-hidden">
+                <Image src="/kd-logo.png" alt="KD" width={36} height={36} />
               </div>
             </Link>
 
@@ -144,10 +143,8 @@ export const DynamicIslandNav = () => {
           <div className="flex md:hidden items-center gap-3 px-1">
             {/* Logo */}
             <Link href="/" className="shrink-0">
-              <div className="w-9 h-9 bg-white/6 rounded-full flex items-center justify-center border border-white/10 hover:border-[#FF6B00]/40 transition-all">
-                <span className="font-display font-bold text-xs text-white tracking-wide">
-                  KD
-                </span>
+              <div className="w-9 h-9 bg-[#f6f3ee] rounded-lg flex items-center justify-center border border-white/10 hover:border-[#FF6B00]/40 transition-all overflow-hidden">
+                <Image src="/kd-logo.png" alt="KD" width={36} height={36} />
               </div>
             </Link>
 
