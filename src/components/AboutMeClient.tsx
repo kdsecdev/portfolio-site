@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import { Card } from "./Card";
 import { TechStack } from "./TechStack";
@@ -56,7 +57,7 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
             {/* Clean credentials footer */}
             <div className="pt-5 mt-2 border-t border-white/8 flex flex-wrap items-center justify-between gap-4">
               <p className="text-xs text-white/40 font-sans leading-relaxed">
-                BSc IT · Central University (L300) &nbsp;·&nbsp; Software Intern @ IT Consortium &nbsp;·&nbsp; BridgeLabs AI Award Winner (2025)
+                BSc IT · Central University (L400) &nbsp;·&nbsp; Software Intern @ IT Consortium &nbsp;·&nbsp; BridgeLabs AI Award Winner (2025)
               </p>
 
             </div>
@@ -82,8 +83,8 @@ export const AboutMeClient: React.FC<AboutMeClientProps> = ({ content }) => {
               {/* Center monogram */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[58%] flex flex-col items-center gap-4">
                 <div className="relative">
-                  <div className="w-28 h-28 rounded-full bg-black/80 border-2 border-[#FF6B00]/50 flex items-center justify-center backdrop-blur-md shadow-[0_0_25px_rgba(255,107,0,0.3)] group-hover:border-[#FF6B00] transition-colors">
-                    <span className="font-display font-black text-5xl text-white tracking-wide">KD</span>
+                  <div className="w-28 h-28 rounded-2xl bg-[#f6f3ee] border-2 border-[#FF6B00]/50 flex items-center justify-center overflow-hidden shadow-[0_0_25px_rgba(255,107,0,0.3)] group-hover:border-[#FF6B00] transition-colors">
+                    <Image src="/kd-logo.png" alt="KD logo" width={112} height={112} />
                   </div>
                   {/* Glow */}
                   <div className="absolute inset-0 rounded-full bg-[#FF6B00]/20 blur-xl -z-10" />

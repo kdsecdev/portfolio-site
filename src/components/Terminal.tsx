@@ -26,7 +26,7 @@ export const Terminal = () => {
             <span className="text-[#FF8533]">&quot;name&quot;</span>: <span className="text-[#FFA043]">&quot;Caleb Botchway (DevKD)&quot;</span>,
           </p>
           <p className="pl-4">
-            <span className="text-[#FF8533]">&quot;education&quot;</span>: <span className="text-[#FFA043]">&quot;BSc IT @ Central University (L300)&quot;</span>,
+            <span className="text-[#FF8533]">&quot;education&quot;</span>: <span className="text-[#FFA043]">&quot;BSc IT @ Central University (L400)&quot;</span>,
           </p>
           <p className="pl-4">
             <span className="text-[#FF8533]">&quot;hackathons&quot;</span>: <span className="text-[#FFA043]">&quot;BridgeLabs AI - Top 6 Winners (2025)&quot;</span>,

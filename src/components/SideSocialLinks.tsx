@@ -13,7 +13,7 @@ const socialLinks = [
     ),
   },
   {
-    href: "https://www.linkedin.com/in/caleb-botchway-3b5aa7265",
+    href: "https://www.linkedin.com/in/calebbotchway/",
     label: "LinkedIn",
     icon: (
       <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current" aria-hidden="true">

@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, type Variants } from "framer-motion";
 import { X, User, Briefcase, Contact, Wrench, Trophy, Heart } from "lucide-react";
+import Image from "next/image";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -110,10 +111,8 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, onClose }) => {
             {/* ── Top bar ── */}
             <div className="relative flex items-center justify-between px-6 pt-5 pb-4 border-b border-white/6">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-sm">
-                  <span className="font-display font-bold text-sm text-white">
-                    KD
-                  </span>
+                <div className="w-9 h-9 rounded-lg bg-[#f6f3ee] border border-white/10 flex items-center justify-center overflow-hidden">
+                  <Image src="/kd-logo.png" alt="KD" width={36} height={36} />
                 </div>
                 <div>
                   <p className="font-display font-bold text-sm text-white leading-none">
